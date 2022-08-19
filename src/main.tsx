@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<Navigate to="/planner" replace />} />
+        <Route path="/" element={<Navigate to="/planner" replace />} />
         <Route path="/planner" element={<Planner />} />
         <Route path="/departures" element={<Depatures />} />
         <Route path="/account" element={<Account />} />

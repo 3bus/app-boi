@@ -17,7 +17,7 @@ export const NavigationBar = () => {
         Journey Planner
       </NavigationIcon>
 
-      <NavigationIcon Icon={HiOutlineCalendar} to="/depatures">
+      <NavigationIcon Icon={HiOutlineCalendar} to="/departures">
         Live Depatures
       </NavigationIcon>
       <NavigationIcon Icon={HiOutlineUser} to="/account">

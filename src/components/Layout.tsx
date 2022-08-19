@@ -1,19 +1,13 @@
 import { ReactNode } from "react";
 import { Header, NavigationBar } from "../components";
 import { tw, css } from "twind/css";
-import MapView from "./MapView";
 
 type Props = {
   children?: ReactNode;
   hasSearch?: boolean;
-  hasMap?: boolean;
 };
 
-export const Layout = ({
-  children,
-  hasSearch = true,
-  hasMap = true,
-}: Props) => {
+export const Layout = ({ children, hasSearch = true }: Props) => {
   return (
     <div
       className={tw`w-screen h-screen flex flex-row sm:justify-center sm:items-center `}
@@ -30,7 +24,6 @@ export const Layout = ({
         <Header hasSearch={hasSearch} />
         {children}
         <NavigationBar />
-        {hasMap && <MapView />}
       </div>
     </div>
   );

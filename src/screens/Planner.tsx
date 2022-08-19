@@ -1,5 +1,9 @@
-import { Layout } from "../components";
+import { Layout, MapView } from "../components";
 
 export const Planner = () => {
-  return <Layout></Layout>;
+  return (
+    <Layout>
+      <MapView />
+    </Layout>
+  );
 };

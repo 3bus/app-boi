@@ -10,8 +10,7 @@ import Map, {
 const MAPBOX_ACCESS_TOKEN =
   "pk.eyJ1IjoiaWxpYS10dXJub3V0IiwiYSI6ImNsNzExdnF2NzBrNmkzdm1xYW5zdjBsdzIifQ.t8cMmqUo6Mv2dBTySkkOWg";
 
-export default function MapView() {
-  // return <div>Map goes here</div>
+export function MapView() {
   return (
     <>
       <Map
@@ -26,9 +25,11 @@ export default function MapView() {
         attributionControl={false}
         mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
         style={{
-            position: 'initial'
+          position: "initial",
         }}
-      ></Map>
+      >
+        <GeolocateControl position="bottom-right" />
+      </Map>
     </>
   );
 }
