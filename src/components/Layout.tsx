@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { tw } from "twind";
-import { css } from "twind/css";
 import { Header, NavigationBar } from "../components";
+import { tw, css } from "twind/css";
+import MapView from "./MapView";
 
 type Props = {
   children?: ReactNode;
@@ -24,6 +24,7 @@ export const Layout = ({ children }: Props) => {
         <Header />
         {children}
         <NavigationBar />
+        <MapView/>
       </div>
     </div>
   );
