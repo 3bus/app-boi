@@ -23,6 +23,7 @@ export default function MapView() {
           pitch: 0,
         }}
         mapStyle="mapbox://styles/mapbox/streets-v11"
+        attributionControl={false}
         mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
         style={{
             position: 'initial'
