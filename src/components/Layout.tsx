@@ -1,7 +1,13 @@
-import { tw, css } from "twind/css";
-import { Header, NavigationBar } from "./components";
+import { ReactNode } from "react";
+import { tw } from "twind";
+import { css } from "twind/css";
+import { Header, NavigationBar } from "../components";
 
-export const App = () => {
+type Props = {
+  children?: ReactNode;
+};
+
+export const Layout = ({ children }: Props) => {
   return (
     <div
       className={tw`w-screen h-screen flex flex-row sm:justify-center sm:items-center`}
@@ -16,7 +22,7 @@ export const App = () => {
         ])}
       >
         <Header />
-
+        {children}
         <NavigationBar />
       </div>
     </div>

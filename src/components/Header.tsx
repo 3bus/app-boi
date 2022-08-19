@@ -1,6 +1,7 @@
 import { tw } from "twind";
 import { HiMenu } from "react-icons/hi";
 import { FaBell } from "react-icons/Fa";
+import { TextInput } from "../components";
 
 type Props = {
   pageName?: string;
@@ -9,9 +10,11 @@ type Props = {
 
 export const Header = ({ pageName, hasSearch = true }: Props) => {
   return (
-    <div className={tw``}>
+    <div
+      className={tw`flex flex-col gap-y-4 p-4 bg-blueGray-800 w-full absolute top-0 `}
+    >
       <div
-        className={tw`bg-blueGray-800 py-4 absolute top-0 text-white w-full flex flex-row justify-between items-center px-4`}
+        className={tw`  text-white flex flex-row justify-between items-center`}
       >
         <HiMenu size={24} />
         <p className={tw`text-white font-semibold text-sm`}>
@@ -19,7 +22,7 @@ export const Header = ({ pageName, hasSearch = true }: Props) => {
         </p>
         <FaBell size={18} />
       </div>
-      {hasSearch && <div></div>}
+      {hasSearch && <TextInput />}
     </div>
   );
 };
