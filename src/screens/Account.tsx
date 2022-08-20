@@ -58,7 +58,7 @@ function ProfileTiers(props: {}) {
         className={tw`flex w-full items-center cursor-pointer select-none`}
         onClick={() => setOpened(!opened)}
       >
-        <div className={tw`w-full text-sm	`}>Tier level</div>
+        <div className={tw`w-full text-sm	font-semibold `}>Tier level info</div>
         <div className={tw`text-gray-400`}>
           {!opened ? <HiChevronDown size={20} /> : <HiChevronUp size={20} />}
         </div>
@@ -66,19 +66,31 @@ function ProfileTiers(props: {}) {
       {opened ? (
         <>
           <div className={tw`flex w-full items-center`}>
+            <div className={tw`w-full text-sm font-semibold	`}>Levels</div>
+            <div className={tw`w-full text-sm font-semibold	`}>
+              Fare Discount
+            </div>
+            <div className={tw`w-full text-sm font-semibold	 text-right`}>
+              Points
+            </div>
+          </div>
+          <div className={tw`flex w-full items-center`}>
             <div className={tw`w-full text-sm text-gray-400`}>Bronze level</div>
+            <div className={tw`w-full text-sm text-gray-400`}>10%</div>
             <div className={tw`w-full text-sm text-gray-400 text-right`}>
               550 Points
             </div>
           </div>
           <div className={tw`flex w-full items-center`}>
             <div className={tw`w-full text-sm text-gray-400`}>Silver level</div>
+            <div className={tw`w-full text-sm text-gray-400`}>20%</div>
             <div className={tw`w-full text-sm text-gray-400 text-right`}>
               1100 Points
             </div>
           </div>
           <div className={tw`flex w-full items-center`}>
             <div className={tw`w-full text-sm text-gray-400`}>Gold level</div>
+            <div className={tw`w-full text-sm text-gray-400`}>30%</div>
             <div className={tw`w-full text-sm text-gray-400 text-right`}>
               2000 Points
             </div>
