@@ -114,7 +114,7 @@ export default function AwardEarned(props: Props) {
             <div style={{ textAlign: "center" }}>
               <span
                 style={{
-                  fontSize: adjuster(64),
+                  fontSize: circleLeadCopy.length > 3 ? adjuster(40) : adjuster(64),
                   lineHeight: adjuster(64) + "px",
                   fontWeight: "500",
                 }}
