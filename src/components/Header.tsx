@@ -1,6 +1,6 @@
 import { tw } from "twind";
 import { HiMenu } from "react-icons/hi";
-import { FaBell } from "react-icons/Fa";
+import { FaBell } from "react-icons/fa";
 import { AddressSearch } from "./AddressSearch";
 
 type Props = {
