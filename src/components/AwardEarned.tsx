@@ -7,15 +7,40 @@ function adjuster(num: number) {
   return (num / 428) * 390;
 }
 
+function getCircleColor(background: string) {
+  var c = background.substring(1); // strip #
+  var rgb = parseInt(c, 16); // convert rrggbb to decimal
+  var r = (rgb >> 16) & 0xff; // extract red
+  var g = (rgb >> 8) & 0xff; // extract green
+  var b = (rgb >> 0) & 0xff; // extract blue
+
+  var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+
+  if (luma < 40) {
+    // pick a different colour
+    return "white";
+  }
+  return "black";
+}
 interface Props {
   topLeadCopy: string;
   circleLeadCopy: string;
   circleBottomCopy: string;
   description: string;
   containerColor: string;
+  circleBackground: string;
+  circleOutline: string;
 }
 export default function AwardEarned(props: Props) {
-  const { topLeadCopy, circleLeadCopy, circleBottomCopy, description, containerColor } = props;
+  const {
+    topLeadCopy,
+    circleLeadCopy,
+    circleBottomCopy,
+    description,
+    containerColor,
+    circleBackground,
+    circleOutline,
+  } = props;
   const navigate = useNavigate();
   return (
     <Layout hasSearch={false}>
@@ -61,7 +86,8 @@ export default function AwardEarned(props: Props) {
         </div>
         <div
           style={{
-            background: "rgb(254, 255, 215)",
+            // background: "rgb(254, 255, 215)",
+            background: circleOutline,
             borderRadius: "100%",
             width: adjuster(295),
             height: adjuster(295),
@@ -73,7 +99,8 @@ export default function AwardEarned(props: Props) {
         >
           <div
             style={{
-              background: "#F9FFB3",
+              // background: "#F9FFB3",
+              background: circleBackground,
               borderRadius: "100%",
               width: adjuster(230),
               height: adjuster(230),
@@ -81,6 +108,7 @@ export default function AwardEarned(props: Props) {
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
+              color: getCircleColor(circleBackground),
             }}
           >
             <div style={{ textAlign: "center" }}>

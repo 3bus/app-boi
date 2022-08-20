@@ -8,6 +8,8 @@ export function Earn() {
     return (
       <AwardEarned
         containerColor="#FBFFD3"
+        circleOutline="rgb(254, 255, 215)"
+        circleBackground="#F9FFB3"
         topLeadCopy="Great job!"
         circleLeadCopy="20%"
         circleBottomCopy="Discount"
@@ -19,6 +21,8 @@ export function Earn() {
     return (
       <AwardEarned
         containerColor="#DBECF7"
+        circleOutline="#4886CF"
+        circleBackground="#000573"
         topLeadCopy="Surprise!"
         circleLeadCopy="Keychain"
         circleBottomCopy="Earned"
@@ -30,6 +34,8 @@ export function Earn() {
     return (
       <AwardEarned
         containerColor="#FFFFFF"
+        circleOutline="#989898"
+        circleBackground="#D9D9D9"
         topLeadCopy="Ka pai!"
         circleLeadCopy="$10"
         circleBottomCopy="Claimed"
@@ -41,6 +47,8 @@ export function Earn() {
     return (
       <AwardEarned
         containerColor="rgba(201, 251, 178, 0.31)"
+        circleOutline="#d4fdd9"
+        circleBackground="#eefde9"
         topLeadCopy="Well done!"
         circleLeadCopy="10kg"
         circleBottomCopy="C02 saved"
@@ -52,6 +60,8 @@ export function Earn() {
     return (
       <AwardEarned
         containerColor="#F7E2FF"
+        circleOutline="rgba(58,0,85,0.2)"
+        circleBackground="#EFC1FF"
         topLeadCopy="Good for you!"
         circleLeadCopy="$10"
         circleBottomCopy="Donated"
@@ -63,6 +73,8 @@ export function Earn() {
     return (
       <AwardEarned
         containerColor="#DBECF7"
+        circleOutline="#4886CF"
+        circleBackground="#000573"
         topLeadCopy="You did it!"
         circleLeadCopy="2 Hours"
         circleBottomCopy="Earned"
@@ -74,6 +86,8 @@ export function Earn() {
     return (
       <AwardEarned
         containerColor="#DBECF7"
+        circleOutline="rgba(72,134,207,0.2)"
+        circleBackground="#D2E3EF"
         topLeadCopy="I’m jealous!"
         circleLeadCopy="VIP Status"
         circleBottomCopy="Earned"
@@ -85,6 +99,8 @@ export function Earn() {
     return (
       <AwardEarned
         containerColor="#ffffff"
+        circleOutline="#898989"
+        circleBackground="#000000"
         topLeadCopy="Aren’t you proud of yourself?"
         circleLeadCopy="T3"
         circleBottomCopy="Lane Pass"
@@ -96,6 +112,8 @@ export function Earn() {
     return (
       <AwardEarned
         containerColor="#f3f3f3"
+        circleOutline="#e1e1e1"
+        circleBackground="#ffffff"
         topLeadCopy="You’re doing something right!"
         circleLeadCopy="Custom Card"
         circleBottomCopy="Earned"
