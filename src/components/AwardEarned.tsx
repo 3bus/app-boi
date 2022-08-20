@@ -98,7 +98,7 @@ export default function AwardEarned() {
         >
           You earned a 20% discount&nbsp;towards any AT&nbsp;HOP monthly pass
         </div>
-        <div>Back</div>
+        <button>Back</button>
       </div>
     </Layout>
   );
