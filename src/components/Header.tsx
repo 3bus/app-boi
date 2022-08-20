@@ -28,7 +28,7 @@ export const Header = forwardRef(
             <div className="">
               <div
                 onClick={() => setOpenNav(!openNav)}
-                className={`flex flex-row items-center gap-y-4 p-4`}
+                className={`flex flex-row w-full gap-2 items-center p-4`}
               >
                 <VscClose style={{ marginRight: 16 }}/>
                 Close
@@ -36,7 +36,7 @@ export const Header = forwardRef(
               <hr />
               <div className="flex">
                 <a
-                  className={`flex flex-row items-center gap-y-4 p-4`}
+                  className={`flex flex-row w-full gap-2 items-center p-4`}
                   href="/"
                 >
                   <FaHome style={{ marginRight: 16 }}/>
@@ -45,7 +45,7 @@ export const Header = forwardRef(
               </div>
               <div className="flex">
                 <a
-                  className={`flex flex-row items-center gap-y-4 p-4`}
+                  className={`flex flex-row w-full gap-2 items-center p-4`}
                   href="/"
                 >
                   <FaBus style={{ marginRight: 16 }}/>
@@ -54,7 +54,7 @@ export const Header = forwardRef(
               </div>
               <div className="flex">
                 <a
-                  className={`flex flex-row items-center gap-y-4 p-4`}
+                  className={`flex flex-row w-full gap-2 items-center p-4`}
                   href="/"
                 >
                   <IoIosBicycle style={{ marginRight: 16 }}/>
@@ -63,7 +63,7 @@ export const Header = forwardRef(
               </div>
               <div className="flex">
                 <a
-                  className={`flex flex-row items-center gap-y-4 p-4`}
+                  className={`flex flex-row w-full gap-2 items-center p-4`}
                   href="/"
                 >
                   <FaCar style={{ marginRight: 16 }}/>
@@ -72,7 +72,7 @@ export const Header = forwardRef(
               </div>
               <div className="flex">
                 <a
-                  className={`flex flex-row items-center gap-y-4 p-4`}
+                  className={`flex flex-row w-full gap-2 items-center p-4`}
                   href="/"
                 >
                   <BsConeStriped style={{ marginRight: 16 }}/>
