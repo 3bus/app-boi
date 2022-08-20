@@ -27,7 +27,7 @@ export const NavigationBar = () => {
         Live Depatures
       </NavigationIcon>
       <NavigationIcon Icon={HiOutlineCurrencyYen} to="/bussin">
-        Bussin'
+        Buslty
       </NavigationIcon>
       <NavigationIcon Icon={HiOutlineUser} to="/account">
         My AT HOP
