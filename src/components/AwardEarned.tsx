@@ -8,7 +8,13 @@ function adjuster(num: number) {
 export default function AwardEarned() {
   return (
     <Layout hasSearch={false}>
-      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <div
           style={{
             display: "flex",
@@ -60,13 +66,38 @@ export default function AwardEarned() {
             }}
           >
             <div>
-              <span style={{ fontSize: adjuster(64), lineHeight: adjuster(64) + "px", fontWeight: '500' }}>20</span>
-              <span style={{ fontSize: adjuster(40), lineHeight: adjuster(64) + "px", fontWeight: '500' }}>%</span>
+              <span
+                style={{
+                  fontSize: adjuster(64),
+                  lineHeight: adjuster(64) + "px",
+                  fontWeight: "500",
+                }}
+              >
+                20
+              </span>
+              <span
+                style={{
+                  fontSize: adjuster(40),
+                  lineHeight: adjuster(64) + "px",
+                  fontWeight: "500",
+                }}
+              >
+                %
+              </span>
             </div>
             <div style={{ fontSize: adjuster(24) }}>Discount</div>
           </div>
         </div>
-        <div>You earned a 20% discount towards any AT HOP monthly pass</div>
+        <div
+          style={{
+            fontSize: adjuster(24),
+            paddingLeft: adjuster(68),
+            paddingRight: adjuster(68),
+            textAlign: 'center'
+          }}
+        >
+          You earned a 20% discount&nbsp;towards any AT&nbsp;HOP monthly pass
+        </div>
         <div>Back</div>
       </div>
     </Layout>
