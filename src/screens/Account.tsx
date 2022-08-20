@@ -16,8 +16,11 @@ interface ProfileAccountProps {
 function ProfileAccount(props: ProfileAccountProps) {
   const percentage = props.pointCount / props.rewardPoints;
   return (
-    <div className={tw`flex flex-col bg-white rounded-xl items-center gap-2 w-full`}>
+    <div
+      className={tw`flex flex-col bg-white rounded-xl items-center gap-2 w-full`}
+    >
       <img
+        alt=""
         src="https://minimaltoolkit.com/images/randomdata/male/49.jpg"
         className={tw`rounded-full w-24`}
       />
@@ -123,8 +126,6 @@ export const Account = () => {
   const nextReward = "Silver level";
   return (
     <Layout hasSearch={false}>
-      {/* TODO: better fix */}
-      <div style={{ paddingTop: 56 }}></div>
       <SectionContainer>
         <ProfileSection
           pointCount={pointCount}
