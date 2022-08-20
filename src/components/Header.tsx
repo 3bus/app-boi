@@ -102,7 +102,7 @@ export const Header = forwardRef(
         <div
           className={tw`  text-white flex flex-row justify-between items-center`}
         >
-          <HiMenu size={24} />
+          <HiMenu size={24} onClick={() => setOpenNav(true)} />
           <p className={tw`text-white font-semibold text-sm`}>
             {pageName || "My AT Hop"}
           </p>

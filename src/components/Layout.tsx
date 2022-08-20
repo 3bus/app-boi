@@ -26,8 +26,6 @@ export const Layout = ({ children, hasSearch = true }: Props) => {
     )
       return 0;
 
-    console.log({ containerHeight, footerHeight, headerHeight });
-
     return containerHeight - footerHeight - headerHeight;
   }, [headerHeight, footerHeight, containerHeight]);
 
