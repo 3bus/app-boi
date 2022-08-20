@@ -1,4 +1,5 @@
-import { HiChevronDown, HiChevronRight } from "react-icons/hi";
+import { useState } from "react";
+import { HiChevronDown, HiChevronRight, HiChevronUp } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { css, tw } from "twind/css";
 import { BubbleCard, Layout } from "../components";
@@ -15,6 +16,7 @@ interface ProfileSectionProps {
 function ProfileSection(props: ProfileSectionProps) {
   const percentage = props.pointCount / props.rewardPoints;
   const navigate = useNavigate();
+  const [toggle, setToggle] = useState(false);
   return (
     <div>
       <div
@@ -46,10 +48,13 @@ function ProfileSection(props: ProfileSectionProps) {
           You have {props.rewardPoints - props.pointCount} points to{" "}
           {props.nextReward}
         </div>
-        <div className={tw`flex w-full items-center`}>
+        <div
+          className={tw`flex w-full items-center`}
+          onClick={() => setToggle(!toggle)}
+        >
           <div className={tw`w-full`}>Tier level</div>
           <div className={tw`text-gray-400`}>
-            <HiChevronDown size={20} />
+            {toggle ? <HiChevronDown size={20} /> : <HiChevronUp size={20} />}
           </div>
         </div>
       </div>
