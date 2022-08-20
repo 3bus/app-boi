@@ -1,6 +1,6 @@
 import { tw } from "twind";
 import { HiMenu } from "react-icons/hi";
-import { FaBell, FaHome, FaBus, FaCar } from "react-icons/Fa";
+import { FaBell, FaHome, FaBus, FaCar } from "react-icons/fa";
 import { AddressSearch } from "./AddressSearch";
 import { forwardRef } from "react";
 import { IoIosBicycle } from "react-icons/io";
