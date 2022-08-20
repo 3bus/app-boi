@@ -1,4 +1,4 @@
-import {  HiChevronRight } from "react-icons/hi";
+import { HiChevronRight } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { tw } from "twind";
 import {
@@ -7,7 +7,6 @@ import {
   ProfileSection,
   SectionContainer,
 } from "../components";
-
 
 interface ProfileAccountProps {
   pointCount: number;
@@ -47,14 +46,18 @@ export const Account = () => {
           className="mt-2"
           renderRightContent={() => <HiChevronRight size={24} />}
         />
-        <BubbleCard
-          text="Earn points"
-          onClick={() => {
-            navigate("/earn");
-          }}
-          className="mt-2"
-          renderRightContent={() => <HiChevronRight size={24} />}
-        />
+        {Array(9)
+          .fill(undefined)
+          .map((_, index) => (
+            <BubbleCard
+              text={`Earn points ${index + 1}`}
+              onClick={() => {
+                navigate(`/earn/${index + 1}`);
+              }}
+              className="mt-2"
+              renderRightContent={() => <HiChevronRight size={24} />}
+            />
+          ))}
       </SectionContainer>
     </Layout>
   );

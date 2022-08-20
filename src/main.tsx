@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/rewards" element={<Account />} />
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/bussin" element={<Bussin />} />
-          <Route path="/earn" element={<Earn />} />
+          <Route path="/earn/:id" element={<Earn />} />
         </Routes>
       </BrowserRouter>
     </SearchContextContextProvider>
