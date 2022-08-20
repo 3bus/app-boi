@@ -3,7 +3,7 @@ import {
   HiOutlineCalendar,
   HiOutlineLocationMarker,
   HiOutlineUser,
-  HiOutlineCurrencyYen
+  HiOutlineCurrencyYen,
 } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 import { apply, tw } from "twind";
@@ -12,12 +12,10 @@ import { css } from "twind/css";
 export const NavigationBar = forwardRef((_, ref: any) => {
   return (
     <div
+      ref={ref}
       className={tw([
-        css`
-          max-width: 390px;
-        `,
-        `fixed w-full bottom-0 border-t-2 border-blueGray-200 bg-white px-2 pt-2 pb-10 shadow-md flex flex-row justify-between items-center`]
-      )}
+        `absolute w-full bottom-0 border-t-2 border-blueGray-200 bg-white px-2 pt-2 pb-10 shadow-md flex flex-row justify-between items-center`,
+      ])}
     >
       <NavigationIcon Icon={HiOutlineLocationMarker} to="/planner">
         Journey Planner

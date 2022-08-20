@@ -4,7 +4,9 @@ export const useHeight = (target: any) => {
   const [size, setSize] = useState<any>(null);
 
   function doTheSizing(target: any) {
-    setSize(target.current.getBoundingClientRect());
+    if (target?.current) {
+      setSize(target.current.getBoundingClientRect());
+    }
   }
   useLayoutEffect(() => {
     doTheSizing(target);

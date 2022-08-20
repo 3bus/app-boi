@@ -55,6 +55,7 @@ export const Layout = ({ children, hasSearch = true }: Props) => {
             css`
               height: ${contentHeight}px;
             `,
+            "overflow-scroll",
           ])}
         >
           {children}
