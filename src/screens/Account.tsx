@@ -50,6 +50,7 @@ export const Account = () => {
           .fill(undefined)
           .map((_, index) => (
             <BubbleCard
+              key={index}
               text={`Earn points ${index + 1}`}
               onClick={() => {
                 navigate(`/earn/${index + 1}`);
