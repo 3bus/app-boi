@@ -7,7 +7,9 @@ function SectionContainer({ children }: { children: React.ReactNode }) {
 interface ProfileSectionProps {
   pointCount: number;
   rewardPoints: number;
+  nextReward: string;
 }
+
 function ProfileSection(props: ProfileSectionProps) {
   const percentage = props.pointCount / props.rewardPoints;
   return (
@@ -35,7 +37,7 @@ function ProfileSection(props: ProfileSectionProps) {
       </div>
       <div className={tw`font-semibold`}>{props.pointCount} Points</div>
       <div className={tw`text-sm opacity-60`}>
-        You have {props.rewardPoints - props.pointCount} points to [reward]
+        You have {props.rewardPoints - props.pointCount} points to {props.nextReward}
       </div>
       <div className={tw`w-full	`}>Tier level</div>
     </div>
@@ -45,12 +47,13 @@ function ProfileSection(props: ProfileSectionProps) {
 export const Account = () => {
   const pointCount = 55;
   const rewardPoints = 100;
+  const nextReward = "Silver level"
   return (
     <Layout hasSearch={false}>
       {/* TODO: better fix */}
       <div style={{ paddingTop: 56 }}></div>
       <SectionContainer>
-        <ProfileSection pointCount={pointCount} rewardPoints={rewardPoints} />
+        <ProfileSection pointCount={pointCount} rewardPoints={rewardPoints} nextReward={nextReward} />
       </SectionContainer>
     </Layout>
   );
