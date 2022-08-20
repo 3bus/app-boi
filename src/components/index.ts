@@ -5,3 +5,5 @@ export * from "./Layout";
 export * from "./MapView";
 export * from "./BubbleCard";
 export * from "./Button";
+export * from "./SectionContainer";
+export * from "./Profile";

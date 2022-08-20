@@ -1,69 +1,5 @@
-import { tw, css } from "twind/css";
-import { BubbleCard, Layout } from "../components";
-import { useNavigate } from "react-router-dom";
-import { HiChevronDown, HiChevronRight } from "react-icons/hi";
-
-function SectionContainer({ children }: { children: React.ReactNode }) {
-  return <div className={tw`p-6`}>{children}</div>;
-}
-interface ProfileSectionProps {
-  pointCount: number;
-  rewardPoints: number;
-  nextReward: string;
-}
-
-function ProfileSection(props: ProfileSectionProps) {
-  const percentage = props.pointCount / props.rewardPoints;
-  const navigate = useNavigate();
-  return (
-    <div>
-      <div
-        className={tw`flex flex-col px-4 py-6 bg-white rounded-xl items-center gap-2	`}
-      >
-        <img
-          src="https://minimaltoolkit.com/images/randomdata/male/49.jpg"
-          className={tw`rounded-full w-24`}
-        />
-        <div
-          className={tw(
-            `h-4 rounded-full bg-gray-300`,
-            css`
-              width: calc(390px * 0.6);
-            `
-          )}
-        >
-          <div
-            className={tw(
-              `h-4 rounded-full bg-blueGray-700`,
-              css`
-                width: calc(390px * 0.6 * ${percentage});
-              `
-            )}
-          ></div>
-        </div>
-        <div className={tw`font-semibold`}>{props.pointCount} Bussin'</div>
-        <div className={tw`text-sm opacity-60`}>
-          {props.rewardPoints - props.pointCount} bussin' left to unlock{" "}
-          {props.nextReward}
-        </div>
-        <div className={tw`flex w-full items-center`}>
-          <div className={tw`w-full`}>Tier level</div>
-          <div className={tw`text-gray-400`}>
-            <HiChevronDown size={20} />
-          </div>
-        </div>
-      </div>
-      <BubbleCard
-        text="Reserve a spot"
-        onClick={() => {
-          navigate("/reserve");
-        }}
-        className="mt-2"
-        renderRightContent={() => <HiChevronRight size={24} />}
-      />
-    </div>
-  );
-}
+import { tw } from "twind/css";
+import { Layout, ProfileSection, SectionContainer } from "../components";
 
 function LightSection() {
   return (
@@ -176,18 +112,8 @@ function VoteSection() {
 }
 
 export const Bussin = () => {
-  const pointCount = 420;
-  const rewardPoints = 420 + 69;
-  const nextReward = "Plus";
   return (
     <Layout hasSearch={false}>
-      <SectionContainer>
-        <ProfileSection
-          pointCount={pointCount}
-          rewardPoints={rewardPoints}
-          nextReward={nextReward}
-        />
-      </SectionContainer>
       You are traveling on bus 777 on route 42
       <SectionContainer>
         <LightSection />

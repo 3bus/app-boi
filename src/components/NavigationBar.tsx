@@ -24,9 +24,6 @@ export const NavigationBar = forwardRef((_, ref: any) => {
       <NavigationIcon Icon={HiOutlineCalendar} to="/departures">
         Live Depatures
       </NavigationIcon>
-      <NavigationIcon Icon={HiOutlineCurrencyYen} to="/bussin">
-        Buslty
-      </NavigationIcon>
       <NavigationIcon Icon={HiOutlineUser} to="/account">
         My AT HOP
       </NavigationIcon>

@@ -1,5 +1,5 @@
 .fade-in {
-  transition: all .75s ease;
+  transition: all 0.75s ease;
 }
 
 .fade-in.show {
