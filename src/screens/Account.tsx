@@ -49,7 +49,7 @@ function ProfileSection(props: ProfileSectionProps) {
           {props.nextReward}
         </div>
         <div
-          className={tw`flex w-full items-center`}
+          className={tw`flex w-full items-center cursor-pointer`}
           onClick={() => setOpened(!opened)}
         >
           <div className={tw`w-full text-sm	`}>Tier level</div>
