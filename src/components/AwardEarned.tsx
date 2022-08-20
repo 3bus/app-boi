@@ -137,6 +137,20 @@ export default function AwardEarned() {
             left: -100,
           }}
         ></div>
+        <div
+          style={{
+            borderRadius: "100%",
+            width: adjuster(185),
+            height: adjuster(185),
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxShadow: "rgb(0 0 0 / 8%) -1px -1px 1em",
+            position: "absolute",
+            bottom: -40,
+            right: -50,
+          }}
+        ></div>
 
         <button
           className={tw`px-4 py-3 text-sm text-white rounded-lg shadow-sm w-full`}
