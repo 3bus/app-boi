@@ -13,7 +13,7 @@ interface ProfileSectionProps {
 function ProfileSection(props: ProfileSectionProps) {
   const percentage = props.pointCount / props.rewardPoints;
   return (
-    <div className={tw`flex flex-col p-6 bg-white rounded-lg items-center`}>
+    <div className={tw`flex flex-col p-6 bg-white rounded-lg items-center gap-2	`}>
       <img
         src="https://minimaltoolkit.com/images/randomdata/male/49.jpg"
         className={tw`rounded-full w-24`}
