@@ -7,23 +7,26 @@ import Map, {
   FullscreenControl,
   ScaleControl,
   GeolocateControl,
+  LayerProps,
+  Source,
+  Layer,
 } from "react-map-gl";
 
 const MAPBOX_ACCESS_TOKEN =
   "pk.eyJ1IjoiaWxpYS10dXJub3V0IiwiYSI6ImNsNzExdnF2NzBrNmkzdm1xYW5zdjBsdzIifQ.t8cMmqUo6Mv2dBTySkkOWg";
 
 export function MapView() {
-  const [lat, setLat] = useState<number | null>(null);
-  const [lon, setLon] = useState<number | null>(null);
+  // const [lat, setLat] = useState<number | null>(null);
+  // const [lon, setLon] = useState<number | null>(null);
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setLat(position.coords.latitude);
-      setLon(position.coords.longitude);
-    });
-  }, []);
+  // useEffect(() => {
+  //   navigator.geolocation.getCurrentPosition((position) => {
+  //     setLat(position.coords.latitude);
+  //     setLon(position.coords.longitude);
+  //   });
+  // }, []);
 
-  console.log({ lat, lon });
+  const MARKER_SIZE = 32;
 
   return (
     <>
@@ -38,20 +41,23 @@ export function MapView() {
         mapStyle="mapbox://styles/mapbox/streets-v11"
         attributionControl={false}
         mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
-        style={{
-          position: "initial",
-        }}
       >
-        {lon !== null && lat !== null && (
+        <GeolocateControl
+          positionOptions={{ enableHighAccuracy: true }}
+          trackUserLocation={true}
+          position="bottom-right"
+          showAccuracyCircle
+        />
+        {/* {lon !== null && lat !== null && (
           <Marker
             key={`marker-user`}
             longitude={lon}
             latitude={lat}
-            anchor="bottom"
+            pitchAlignment="map"
           >
-            <HiOutlineLocationMarker size={32} />
+            <HiOutlineLocationMarker size={MARKER_SIZE} />
           </Marker>
-        )}
+        )} */}
       </Map>
     </>
   );

@@ -10,9 +10,7 @@ type Props = {
 
 export const Header = ({ pageName, hasSearch = true }: Props) => {
   return (
-    <div
-      className={tw`flex flex-col gap-y-4 p-4 bg-blueGray-800 w-full absolute top-0 `}
-    >
+    <div className={tw`flex flex-col gap-y-4 p-4 bg-blueGray-800 w-full `}>
       <div
         className={tw`  text-white flex flex-row justify-between items-center`}
       >
