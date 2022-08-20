@@ -30,7 +30,7 @@ export const Header = forwardRef(
                 onClick={() => setOpenNav(!openNav)}
                 className={`flex flex-row w-full gap-2 items-center p-4`}
               >
-                <VscClose style={{ marginRight: 16 }}/>
+                <VscClose />
                 Close
               </div>
               <hr />
@@ -39,7 +39,7 @@ export const Header = forwardRef(
                   className={`flex flex-row w-full gap-2 items-center p-4`}
                   href="/"
                 >
-                  <FaHome style={{ marginRight: 16 }}/>
+                  <FaHome className="py-2" />
                   Home
                 </a>
               </div>
@@ -48,7 +48,7 @@ export const Header = forwardRef(
                   className={`flex flex-row w-full gap-2 items-center p-4`}
                   href="/"
                 >
-                  <FaBus style={{ marginRight: 16 }}/>
+                  <FaBus />
                   Bus
                 </a>
               </div>
@@ -57,7 +57,7 @@ export const Header = forwardRef(
                   className={`flex flex-row w-full gap-2 items-center p-4`}
                   href="/"
                 >
-                  <IoIosBicycle style={{ marginRight: 16 }}/>
+                  <IoIosBicycle />
                   Cycle
                 </a>
               </div>
@@ -66,7 +66,7 @@ export const Header = forwardRef(
                   className={`flex flex-row w-full gap-2 items-center p-4`}
                   href="/"
                 >
-                  <FaCar style={{ marginRight: 16 }}/>
+                  <FaCar />
                   Drive
                 </a>
               </div>
@@ -75,7 +75,7 @@ export const Header = forwardRef(
                   className={`flex flex-row w-full gap-2 items-center p-4`}
                   href="/"
                 >
-                  <BsConeStriped style={{ marginRight: 16 }}/>
+                  <BsConeStriped />
                   Road works
                 </a>
               </div>
