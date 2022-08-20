@@ -71,8 +71,7 @@ export default function AwardEarned() {
           <div style={{ fontSize: adjuster(24) }}>Discount</div>
         </div>
       </div>
-      <div>You earned a 20% discount towards any </div>
-      <div>AT HOP monthly pass</div>
+      <div>You earned a 20% discount towards any AT HOP monthly pass</div>
       <div>Back</div>
     </Layout>
   );
