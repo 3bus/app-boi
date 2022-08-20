@@ -30,7 +30,7 @@ export const Header = forwardRef(
                 onClick={() => setOpenNav(!openNav)}
                 className={`flex flex-row items-center gap-y-4 p-4`}
               >
-                <VscClose />
+                <VscClose style={{ marginRight: 16 }}/>
                 Close
               </div>
               <hr />
@@ -39,7 +39,7 @@ export const Header = forwardRef(
                   className={`flex flex-row items-center gap-y-4 p-4`}
                   href="/"
                 >
-                  <FaHome className="py-2" />
+                  <FaHome style={{ marginRight: 16 }}/>
                   Home
                 </a>
               </div>
@@ -48,7 +48,7 @@ export const Header = forwardRef(
                   className={`flex flex-row items-center gap-y-4 p-4`}
                   href="/"
                 >
-                  <FaBus />
+                  <FaBus style={{ marginRight: 16 }}/>
                   Bus
                 </a>
               </div>
@@ -57,7 +57,7 @@ export const Header = forwardRef(
                   className={`flex flex-row items-center gap-y-4 p-4`}
                   href="/"
                 >
-                  <IoIosBicycle />
+                  <IoIosBicycle style={{ marginRight: 16 }}/>
                   Cycle
                 </a>
               </div>
@@ -66,7 +66,7 @@ export const Header = forwardRef(
                   className={`flex flex-row items-center gap-y-4 p-4`}
                   href="/"
                 >
-                  <FaCar />
+                  <FaCar style={{ marginRight: 16 }}/>
                   Drive
                 </a>
               </div>
@@ -75,7 +75,7 @@ export const Header = forwardRef(
                   className={`flex flex-row items-center gap-y-4 p-4`}
                   href="/"
                 >
-                  <BsConeStriped />
+                  <BsConeStriped style={{ marginRight: 16 }}/>
                   Road works
                 </a>
               </div>
