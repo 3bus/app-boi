@@ -16,8 +16,11 @@ interface ProfileAccountProps {
 function ProfileAccount(props: ProfileAccountProps) {
   const percentage = props.pointCount / props.rewardPoints;
   return (
-    <div className={tw`flex flex-col bg-white rounded-xl items-center gap-2 w-full`}>
+    <div
+      className={tw`flex flex-col bg-white rounded-xl items-center gap-2 w-full`}
+    >
       <img
+        alt=""
         src="https://minimaltoolkit.com/images/randomdata/male/49.jpg"
         className={tw`rounded-full w-24`}
       />
@@ -55,7 +58,7 @@ function ProfileTiers(props: {}) {
         className={tw`flex w-full items-center cursor-pointer select-none`}
         onClick={() => setOpened(!opened)}
       >
-        <div className={tw`w-full text-sm	`}>Tier level</div>
+        <div className={tw`w-full text-sm	font-semibold `}>Tier level info</div>
         <div className={tw`text-gray-400`}>
           {!opened ? <HiChevronDown size={20} /> : <HiChevronUp size={20} />}
         </div>
@@ -63,19 +66,31 @@ function ProfileTiers(props: {}) {
       {opened ? (
         <>
           <div className={tw`flex w-full items-center`}>
+            <div className={tw`w-full text-sm font-semibold	`}>Levels</div>
+            <div className={tw`w-full text-sm font-semibold	`}>
+              Fare Discount
+            </div>
+            <div className={tw`w-full text-sm font-semibold	 text-right`}>
+              Points
+            </div>
+          </div>
+          <div className={tw`flex w-full items-center`}>
             <div className={tw`w-full text-sm text-gray-400`}>Bronze level</div>
+            <div className={tw`w-full text-sm text-gray-400`}>10%</div>
             <div className={tw`w-full text-sm text-gray-400 text-right`}>
               550 Points
             </div>
           </div>
           <div className={tw`flex w-full items-center`}>
             <div className={tw`w-full text-sm text-gray-400`}>Silver level</div>
+            <div className={tw`w-full text-sm text-gray-400`}>20%</div>
             <div className={tw`w-full text-sm text-gray-400 text-right`}>
               1100 Points
             </div>
           </div>
           <div className={tw`flex w-full items-center`}>
             <div className={tw`w-full text-sm text-gray-400`}>Gold level</div>
+            <div className={tw`w-full text-sm text-gray-400`}>30%</div>
             <div className={tw`w-full text-sm text-gray-400 text-right`}>
               2000 Points
             </div>
@@ -123,8 +138,6 @@ export const Account = () => {
   const nextReward = "Silver level";
   return (
     <Layout hasSearch={false}>
-      {/* TODO: better fix */}
-      <div style={{ paddingTop: 56 }}></div>
       <SectionContainer>
         <ProfileSection
           pointCount={pointCount}

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { forwardRef, ReactNode } from "react";
 import {
   HiOutlineCalendar,
   HiOutlineLocationMarker,
@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 import { apply, tw } from "twind";
 import { css } from "twind/css";
 
-export const NavigationBar = () => {
+export const NavigationBar = forwardRef((_, ref: any) => {
   return (
     <div
       className={tw([
@@ -34,7 +34,7 @@ export const NavigationBar = () => {
       </NavigationIcon>
     </div>
   );
-};
+});
 
 type NavigationIconProps = {
   Icon: React.FC<{ size: number }>;
