@@ -1,7 +1,7 @@
 import { tw } from "twind";
 import { HiMenu } from "react-icons/hi";
 import { FaBell } from "react-icons/Fa";
-import { TextInput } from "../components";
+import { AddressSearch } from "./AddressSearch";
 
 type Props = {
   pageName?: string;
@@ -20,7 +20,8 @@ export const Header = ({ pageName, hasSearch = true }: Props) => {
         </p>
         <FaBell size={18} />
       </div>
-      {hasSearch && <TextInput />}
+      {hasSearch && <AddressSearch onSelect={ console.log }/>}
     </div>
   );
 };
+
