@@ -20,7 +20,7 @@ export function MapView() {
   const { searchTerm, setSearchTerm } = useSearchTerm();
 
   const MARKER_SIZE = 32;
-  const dataOne = {
+  const dataOne: GeoJSON.Feature<GeoJSON.Geometry> = {
     type: "Feature",
     properties: {},
     geometry: {
