@@ -1,4 +1,4 @@
-import { tw } from "twind/css";
+import { css, tw } from "twind/css";
 import { Layout } from "../components";
 function SectionContainer({ children }: { children: React.ReactNode }) {
   return <div className={tw`p-6`}>{children}</div>;
@@ -9,6 +9,7 @@ interface ProfileSectionProps {
   rewardPoints: number;
 }
 function ProfileSection(props: ProfileSectionProps) {
+  const percentage = props.pointCount / props.rewardPoints;
   return (
     <div className={tw`flex flex-col p-6 bg-white rounded-lg items-center`}>
       <img
@@ -16,16 +17,20 @@ function ProfileSection(props: ProfileSectionProps) {
         className={tw`rounded-full w-24`}
       />
       <div
-        className={tw`h-4 rounded-full bg-gray-300`}
-        style={{
-          width: "calc(390px * 0.6)",
-        }}
+        className={tw(
+          `h-4 rounded-full bg-gray-300`,
+          css`
+            width: calc(390px * 0.6);
+          `
+        )}
       >
         <div
-          className={tw`h-4 rounded-full bg-blueGray-700`}
-          style={{
-            width: "calc(390px * 0.6 * 0.5)",
-          }}
+          className={tw(
+            `h-4 rounded-full bg-blueGray-700`,
+            css`
+              width: calc(390px * 0.6 * ${percentage});
+            `
+          )}
         ></div>
       </div>
       <div className={tw`font-semibold`}>{props.pointCount} Points</div>
@@ -38,7 +43,7 @@ function ProfileSection(props: ProfileSectionProps) {
 }
 
 export const Account = () => {
-  const pointCount = 95;
+  const pointCount = 55;
   const rewardPoints = 100;
   return (
     <Layout hasSearch={false}>
