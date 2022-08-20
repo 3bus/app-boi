@@ -5,7 +5,7 @@ function SectionContainer({ children }: { children: React.ReactNode }) {
 }
 function ProfileSection() {
   return (
-    <div className={tw`flex flex-col  p-6 bg-white	 rounded-lg`}>
+    <div className={tw`flex flex-col  p-6 bg-white	 rounded-lg items-center`}>
       <img src="https://minimaltoolkit.com/images/randomdata/male/49.jpg" className={tw`rounded-full w-36	`}/>
       XX Points
       <div>You have XX points to [reward]</div>
