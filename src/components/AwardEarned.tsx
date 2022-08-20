@@ -33,7 +33,6 @@ export default function AwardEarned() {
             justifyContent: "flex-end",
             gap: 10,
             backgroundColor: "rgb(50, 119, 102, 0.6)",
-            // marginLeft: "calc((597px - 390px) / -2)",
             marginTop: "calc(-590px + 130px)",
             borderBottomLeftRadius: "100%",
             borderBottomRightRadius: "100%",
