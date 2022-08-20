@@ -1,3 +1,5 @@
+import { useEffect, useMemo, useState } from "react";
+import { HiOutlineLocationMarker } from "react-icons/hi";
 import Map, {
   Marker,
   Popup,
@@ -11,6 +13,18 @@ const MAPBOX_ACCESS_TOKEN =
   "pk.eyJ1IjoiaWxpYS10dXJub3V0IiwiYSI6ImNsNzExdnF2NzBrNmkzdm1xYW5zdjBsdzIifQ.t8cMmqUo6Mv2dBTySkkOWg";
 
 export function MapView() {
+  const [lat, setLat] = useState<number | null>(null);
+  const [lon, setLon] = useState<number | null>(null);
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      setLat(position.coords.latitude);
+      setLon(position.coords.longitude);
+    });
+  }, []);
+
+  console.log({ lat, lon });
+
   return (
     <>
       <Map
@@ -28,7 +42,16 @@ export function MapView() {
           position: "initial",
         }}
       >
-        <GeolocateControl position="bottom-right" />
+        {lon !== null && lat !== null && (
+          <Marker
+            key={`marker-user`}
+            longitude={lon}
+            latitude={lat}
+            anchor="bottom"
+          >
+            <HiOutlineLocationMarker size={32} />
+          </Marker>
+        )}
       </Map>
     </>
   );

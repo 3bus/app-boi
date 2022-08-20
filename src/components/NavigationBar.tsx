@@ -5,7 +5,7 @@ import {
   HiOutlineUser,
 } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
-import { tw } from "twind";
+import { apply, tw } from "twind";
 import { css } from "twind/css";
 
 export const NavigationBar = () => {
@@ -33,16 +33,23 @@ type NavigationIconProps = {
   to: string;
 };
 
+type NavLinkStyleProps = {
+  isActive: boolean;
+};
+
+const navLinkStyles = ({ isActive }: NavLinkStyleProps) =>
+  tw([
+    apply`flex flex-col gap-y-1 text-gray-500 items-center justify-center hover:bg-gray-100 rounded-md w-full py-2 `,
+    { "text-blue-600": isActive },
+  ]);
+
 export const NavigationIcon = ({ Icon, children, to }: NavigationIconProps) => {
   return (
-    <NavLink
-      to={to}
-      className={tw`flex flex-col gap-y-1 items-center justify-center hover:bg-gray-100 rounded-md w-full py-2 `}
-    >
+    <NavLink to={to} className={navLinkStyles}>
       <Icon size={28} />
       <p
         className={tw(
-          ` font-bold text-gray-500`,
+          ` font-bold`,
           css`
             font-size: 10px;
           `
