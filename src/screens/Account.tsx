@@ -12,7 +12,7 @@ interface ProfileSectionProps {
   nextReward: string;
 }
 
-function ProfileSection(props: ProfileSectionProps) {
+export function ProfileSection(props: ProfileSectionProps) {
   const percentage = props.pointCount / props.rewardPoints;
   const navigate = useNavigate();
   return (

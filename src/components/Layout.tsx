@@ -18,7 +18,7 @@ export const Layout = ({ children, hasSearch = true }: Props) => {
             max-width: 390px;
             max-height: 844px;
           `,
-          "w-full h-full bg-gray-200 relative rounded-2xl shadow-xl overflow-hidden",
+          "w-full h-full bg-gray-200 relative rounded-2xl shadow-xl",
         ])}
       >
         <Header hasSearch={hasSearch} />
@@ -35,6 +35,13 @@ export const Layout = ({ children, hasSearch = true }: Props) => {
           ])}
         >
           {children}
+          <div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
         </div>
         <NavigationBar />
       </div>
