@@ -18,6 +18,7 @@ export default function AwardEarned() {
           height: "100%",
           paddingLeft: adjuster(20),
           paddingRight: adjuster(20),
+          background: "#FBFFD3",
         }}
       >
         <div
@@ -58,6 +59,7 @@ export default function AwardEarned() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            boxShadow: "rgb(0 0 0 / 8%) -1px -1px 1em",
           }}
         >
           <div
@@ -106,7 +108,8 @@ export default function AwardEarned() {
           You earned a 20% discount&nbsp;towards any AT&nbsp;HOP monthly pass
         </div>
         <button
-          className={tw`px-4 py-3 text-sm bg-blue-900 text-white rounded-lg shadow-sm w-full`}
+          className={tw`px-4 py-3 text-sm text-white rounded-lg shadow-sm w-full`}
+          style={{ backgroundColor: "#2B374D" }}
         >
           Back
         </button>
