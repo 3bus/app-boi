@@ -82,7 +82,7 @@ export default function AwardEarned(props: Props) {
               flexDirection: "column",
             }}
           >
-            <div>
+            <div style={{ textAlign: "center" }}>
               <span
                 style={{
                   fontSize: adjuster(64),
