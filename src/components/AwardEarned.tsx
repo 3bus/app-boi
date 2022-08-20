@@ -1,5 +1,6 @@
 import { Layout } from "./Layout";
 import { FaCheck } from "react-icons/fa";
+import { tw } from "twind";
 
 function adjuster(num: number) {
   return (num / 428) * 390;
@@ -13,6 +14,10 @@ export default function AwardEarned() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          justifyContent: "space-evenly",
+          height: "100%",
+          paddingLeft: adjuster(20),
+          paddingRight: adjuster(20),
         }}
       >
         <div
@@ -26,18 +31,20 @@ export default function AwardEarned() {
             gap: 10,
             backgroundColor: "rgb(50, 119, 102, 0.6)",
             // marginLeft: "calc((597px - 390px) / -2)",
-            marginTop: "calc(-590px + 150px)",
+            marginTop: "calc(-590px + 130px)",
             borderBottomLeftRadius: "100%",
             borderBottomRightRadius: "100%",
           }}
         >
-          <div style={{ fontSize: 24, paddingTop: 40, color: "white" }}>
+          <div
+            style={{ fontSize: adjuster(24), paddingTop: 40, color: "white" }}
+          >
             Great Job!
           </div>
           <div style={{ paddingBottom: 40 }}>
             <FaCheck
               className="text-green-500"
-              size={(49 / 428) * 390}
+              size={adjuster(49)}
               color="white"
             />
           </div>
@@ -93,12 +100,16 @@ export default function AwardEarned() {
             fontSize: adjuster(24),
             paddingLeft: adjuster(68),
             paddingRight: adjuster(68),
-            textAlign: 'center'
+            textAlign: "center",
           }}
         >
           You earned a 20% discount&nbsp;towards any AT&nbsp;HOP monthly pass
         </div>
-        <button>Back</button>
+        <button
+          className={tw`px-4 py-3 text-sm bg-blue-900 text-white rounded-lg shadow-sm w-full`}
+        >
+          Back
+        </button>
       </div>
     </Layout>
   );
