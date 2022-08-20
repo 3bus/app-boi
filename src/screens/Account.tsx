@@ -8,12 +8,6 @@ import {
   SectionContainer,
 } from "../components";
 
-interface ProfileAccountProps {
-  pointCount: number;
-  rewardPoints: number;
-  nextReward: string;
-}
-
 export const Account = () => {
   const navigate = useNavigate();
   const pointCount = 55;
