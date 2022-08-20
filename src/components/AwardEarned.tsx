@@ -1,12 +1,14 @@
 import { Layout } from "./Layout";
 import { FaCheck } from "react-icons/fa";
 import { tw } from "twind";
+import { useNavigate } from "react-router-dom";
 
 function adjuster(num: number) {
   return (num / 428) * 390;
 }
 
 export default function AwardEarned() {
+  const navigate = useNavigate();
   return (
     <Layout hasSearch={false}>
       <div
@@ -110,6 +112,9 @@ export default function AwardEarned() {
         <button
           className={tw`px-4 py-3 text-sm text-white rounded-lg shadow-sm w-full`}
           style={{ backgroundColor: "#2B374D" }}
+          onClick={() => {
+            navigate(-1);
+          }}
         >
           Back
         </button>
