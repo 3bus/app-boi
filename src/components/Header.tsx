@@ -8,6 +8,7 @@ import { BsConeStriped } from "react-icons/bs";
 import { VscClose } from "react-icons/vsc";
 
 import "./menu.css";
+import { useSearchTerm } from "../contexts/SearchContext";
 
 type Props = {
   pageName?: string;
@@ -18,6 +19,7 @@ type Props = {
 
 export const Header = forwardRef(
   ({ pageName, hasSearch = true, openNav, setOpenNav }: Props, ref: any) => {
+    const { searchTerm, setSearchTerm } = useSearchTerm();
     if (openNav) {
       return (
         <div
@@ -108,7 +110,14 @@ export const Header = forwardRef(
           </p>
           <FaBell size={18} />
         </div>
-        {hasSearch && <AddressSearch onSelect={console.log} />}
+        {hasSearch && (
+          <AddressSearch
+            onSelect={(results) => {
+              console.log({ results });
+              setSearchTerm(results.features[0].properties.address_line1 || "");
+            }}
+          />
+        )}
       </div>
     );
   }
