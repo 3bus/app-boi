@@ -1,4 +1,4 @@
-import { HiChevronRight } from "react-icons/hi";
+import { HiChevronDown, HiChevronRight } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import { css, tw } from "twind/css";
 import { BubbleCard, Layout } from "../components";
@@ -18,7 +18,7 @@ function ProfileSection(props: ProfileSectionProps) {
   return (
     <div>
       <div
-        className={tw`flex flex-col p-6 bg-white rounded-lg items-center gap-2	`}
+        className={tw`flex flex-col px-4 py-6 bg-white rounded-xl items-center gap-2	`}
       >
         <img
           src="https://minimaltoolkit.com/images/randomdata/male/49.jpg"
@@ -46,7 +46,12 @@ function ProfileSection(props: ProfileSectionProps) {
           You have {props.rewardPoints - props.pointCount} points to{" "}
           {props.nextReward}
         </div>
-        <div className={tw`w-full	`}>Tier level</div>
+        <div className={tw`flex w-full items-center`}>
+          <div className={tw`w-full`}>Tier level</div>
+          <div className={tw`text-gray-400`}>
+            <HiChevronDown size={20} />
+          </div>
+        </div>
       </div>
       <BubbleCard
         text="Reserve a spot"
