@@ -11,7 +11,7 @@ import { css } from "twind/css";
 export const NavigationBar = () => {
   return (
     <div
-      className={tw`absolute w-full bottom-0 bg-white px-2 pt-2 pb-10 shadow-md flex flex-row justify-between items-center`}
+      className={tw`absolute w-full bottom-0 border-t-2 border-blueGray-200 bg-white px-2 pt-2 pb-10 shadow-md flex flex-row justify-between items-center`}
     >
       <NavigationIcon Icon={HiOutlineLocationMarker} to="/planner">
         Journey Planner

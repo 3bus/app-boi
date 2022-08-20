@@ -18,15 +18,19 @@ export const Layout = ({ children, hasSearch = true }: Props) => {
             max-width: 390px;
             max-height: 844px;
           `,
-          "w-full h-full bg-gray-200 relative rounded-2xl shadow-xl ",
+          "w-full h-full bg-gray-200 relative rounded-2xl shadow-xl overflow-hidden",
         ])}
       >
         <Header hasSearch={hasSearch} />
         <div
           className={tw([
-            css`
-              max-height: 620px;
-            `,
+            hasSearch
+              ? css`
+                  max-height: 620px;
+                `
+              : css`
+                  max-height: 676px;
+                `,
             "h-full",
           ])}
         >
