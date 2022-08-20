@@ -16,7 +16,7 @@ interface ProfileSectionProps {
 function ProfileSection(props: ProfileSectionProps) {
   const percentage = props.pointCount / props.rewardPoints;
   const navigate = useNavigate();
-  const [toggle, setToggle] = useState(false);
+  const [opened, setOpened] = useState(false);
   return (
     <div>
       <div
@@ -50,13 +50,27 @@ function ProfileSection(props: ProfileSectionProps) {
         </div>
         <div
           className={tw`flex w-full items-center`}
-          onClick={() => setToggle(!toggle)}
+          onClick={() => setOpened(!opened)}
         >
-          <div className={tw`w-full`}>Tier level</div>
+          <div className={tw`w-full text-sm	`}>Tier level</div>
           <div className={tw`text-gray-400`}>
-            {toggle ? <HiChevronDown size={20} /> : <HiChevronUp size={20} />}
+            {!opened ? <HiChevronDown size={20} /> : <HiChevronUp size={20} />}
           </div>
         </div>
+        {opened ? <>
+          <div className={tw`flex w-full items-center`}>
+            <div className={tw`w-full text-sm text-gray-400`}>Bronze level</div>
+            <div className={tw`w-full text-sm text-gray-400 text-right`}>550 Points</div>
+          </div>
+          <div className={tw`flex w-full items-center`}>
+            <div className={tw`w-full text-sm text-gray-400`}>Silver level</div>
+            <div className={tw`w-full text-sm text-gray-400 text-right`}>1100 Points</div>
+          </div>
+          <div className={tw`flex w-full items-center`}>
+            <div className={tw`w-full text-sm text-gray-400`}>Gold level</div>
+            <div className={tw`w-full text-sm text-gray-400 text-right`}>2000 Points</div>
+          </div>
+        </> : null}
       </div>
       <BubbleCard
         text="Reserve a spot"
