@@ -121,4 +121,5 @@ export function Earn() {
       />
     );
   }
+  return null
 }
