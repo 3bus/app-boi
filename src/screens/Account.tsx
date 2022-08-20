@@ -16,16 +16,14 @@ function ProfileSection(props: ProfileSectionProps) {
         className={tw`rounded-full w-24`}
       />
       <div
-        className={tw`h-4 rounded-full`}
+        className={tw`h-4 rounded-full bg-gray-300`}
         style={{
-          background: "#D9D9D9",
           width: "calc(390px * 0.6)",
         }}
       >
         <div
-          className={tw`h-4 rounded-full`}
+          className={tw`h-4 rounded-full bg-blueGray-700`}
           style={{
-            background: "#2B374D",
             width: "calc(390px * 0.6 * 0.5)",
           }}
         ></div>
