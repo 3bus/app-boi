@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { tw } from "twind";
 import { css } from "twind/css";
 import { BubbleCard } from "../components";
+import { Meme } from './memes';
 
 interface ProfileAccountProps {
   pointCount: number;
@@ -17,11 +18,7 @@ function ProfileAccount(props: ProfileAccountProps) {
     <div
       className={tw`flex flex-col bg-white rounded-xl items-center gap-2 w-full`}
     >
-      <img
-        alt=""
-        src="https://minimaltoolkit.com/images/randomdata/male/49.jpg"
-        className={tw`rounded-full w-24`}
-      />
+      <Meme />
       <div
         className={tw(
           `h-4 rounded-full bg-gray-300`,
