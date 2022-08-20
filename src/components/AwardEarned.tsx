@@ -12,9 +12,10 @@ interface Props {
   circleLeadCopy: string;
   circleBottomCopy: string;
   description: string;
+  containerColor: string;
 }
 export default function AwardEarned(props: Props) {
-  const { topLeadCopy, circleLeadCopy, circleBottomCopy, description } = props;
+  const { topLeadCopy, circleLeadCopy, circleBottomCopy, description, containerColor } = props;
   const navigate = useNavigate();
   return (
     <Layout hasSearch={false}>
@@ -27,7 +28,7 @@ export default function AwardEarned(props: Props) {
           height: "100%",
           paddingLeft: adjuster(20),
           paddingRight: adjuster(20),
-          background: "#FBFFD3",
+          background: containerColor,
         }}
       >
         <div

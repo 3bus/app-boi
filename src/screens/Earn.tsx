@@ -7,6 +7,7 @@ export function Earn() {
   if (id === "1") {
     return (
       <AwardEarned
+        containerColor="#FBFFD3"
         topLeadCopy="Great job!"
         circleLeadCopy="20%"
         circleBottomCopy="Discount"
@@ -17,6 +18,7 @@ export function Earn() {
   if (id === "2") {
     return (
       <AwardEarned
+        containerColor="#DBECF7"
         topLeadCopy="Surprise!"
         circleLeadCopy="Keychain"
         circleBottomCopy="Earned"
@@ -27,6 +29,7 @@ export function Earn() {
   if (id === "3") {
     return (
       <AwardEarned
+        containerColor="#FFFFFF"
         topLeadCopy="Ka pai!"
         circleLeadCopy="$10"
         circleBottomCopy="Claimed"
@@ -37,6 +40,7 @@ export function Earn() {
   if (id === "4") {
     return (
       <AwardEarned
+        containerColor="rgba(201, 251, 178, 0.31)"
         topLeadCopy="Well done!"
         circleLeadCopy="10kg"
         circleBottomCopy="C02 saved"
@@ -47,6 +51,7 @@ export function Earn() {
   if (id === "5") {
     return (
       <AwardEarned
+        containerColor="#F7E2FF"
         topLeadCopy="Good for you!"
         circleLeadCopy="$10"
         circleBottomCopy="Donated"
@@ -57,6 +62,7 @@ export function Earn() {
   if (id === "6") {
     return (
       <AwardEarned
+        containerColor="#DBECF7"
         topLeadCopy="You did it!"
         circleLeadCopy="2 Hours"
         circleBottomCopy="Earned"
@@ -67,6 +73,7 @@ export function Earn() {
   if (id === "7") {
     return (
       <AwardEarned
+        containerColor="#DBECF7"
         topLeadCopy="I’m jealous!"
         circleLeadCopy="VIP Status"
         circleBottomCopy="Earned"
@@ -77,6 +84,7 @@ export function Earn() {
   if (id === "8") {
     return (
       <AwardEarned
+        containerColor="#ffffff"
         topLeadCopy="Aren’t you proud of yourself?"
         circleLeadCopy="T3"
         circleBottomCopy="Lane Pass"
@@ -87,6 +95,7 @@ export function Earn() {
   if (id === "9") {
     return (
       <AwardEarned
+        containerColor="#f3f3f3"
         topLeadCopy="You’re doing something right!"
         circleLeadCopy="Custom Card"
         circleBottomCopy="Earned"
