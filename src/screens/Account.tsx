@@ -1,10 +1,12 @@
 import { tw } from "twind/css";
 import { Layout } from "../components";
-
+function SectionContainer({ children }: { children: React.ReactNode }) {
+  return <div className={tw`p-6`}>{children}</div>;
+}
 function ProfileSection() {
   return (
-    <div className={tw`flex flex-col`}>
-      <img src="https://minimaltoolkit.com/images/randomdata/male/49.jpg" />
+    <div className={tw`flex flex-col  p-6 bg-white	 rounded-lg`}>
+      <img src="https://minimaltoolkit.com/images/randomdata/male/49.jpg" className={tw`rounded-full w-36	`}/>
       XX Points
       <div>You have XX points to [reward]</div>
       <div>Tier level</div>
@@ -17,7 +19,9 @@ export const Account = () => {
     <Layout hasSearch={false}>
       {/* TODO: better fix */}
       <div style={{ paddingTop: 56 }}></div>
-      <ProfileSection />
+      <SectionContainer>
+        <ProfileSection />
+      </SectionContainer>
     </Layout>
   );
 };
