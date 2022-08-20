@@ -1,7 +1,7 @@
 import { ReactNode, useMemo, useRef, useState } from "react";
 import { Header, NavigationBar } from "../components";
 import { tw, css } from "twind/css";
-import { useSize } from "../hooks";
+import { useHeight } from "../hooks";
 
 type Props = {
   children?: ReactNode;
@@ -15,9 +15,9 @@ export const Layout = ({ children, hasSearch = true }: Props) => {
   const headerRef = useRef(null);
   const footerRef = useRef(null);
   const containerRef = useRef(null);
-  const headerHeight = useSize(headerRef);
-  const footerHeight = useSize(footerRef);
-  const containerHeight = useSize(containerRef);
+  const headerHeight = useHeight(headerRef);
+  const footerHeight = useHeight(footerRef);
+  const containerHeight = useHeight(containerRef);
   const contentHeight = useMemo(() => {
     if (
       containerHeight === undefined ||
@@ -25,6 +25,8 @@ export const Layout = ({ children, hasSearch = true }: Props) => {
       headerHeight === undefined
     )
       return 0;
+
+    console.log({ containerHeight, footerHeight, headerHeight });
 
     return containerHeight - footerHeight - headerHeight;
   }, [headerHeight, footerHeight, containerHeight]);
