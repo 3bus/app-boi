@@ -12,9 +12,6 @@ import Map, {
   Layer,
 } from "react-map-gl";
 
-const MAPBOX_ACCESS_TOKEN =
-  "pk.eyJ1IjoiaWxpYS10dXJub3V0IiwiYSI6ImNsNzExdnF2NzBrNmkzdm1xYW5zdjBsdzIifQ.t8cMmqUo6Mv2dBTySkkOWg";
-
 export function MapView() {
   // const [lat, setLat] = useState<number | null>(null);
   // const [lon, setLon] = useState<number | null>(null);
@@ -40,7 +37,7 @@ export function MapView() {
         }}
         mapStyle="mapbox://styles/mapbox/streets-v11"
         attributionControl={false}
-        mapboxAccessToken={MAPBOX_ACCESS_TOKEN}
+        mapboxAccessToken={import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}
       >
         <GeolocateControl
           positionOptions={{ enableHighAccuracy: true }}
