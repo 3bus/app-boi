@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { HiChevronDown, HiChevronRight, HiChevronUp } from "react-icons/hi";
-import { useNavigate } from "react-router-dom";
+import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { tw } from "twind";
 import { css } from "twind/css";
-import { BubbleCard } from "../components";
 import { Meme } from './memes';
 
 interface ProfileAccountProps {
