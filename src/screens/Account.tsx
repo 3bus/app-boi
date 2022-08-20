@@ -5,30 +5,49 @@ function SectionContainer({ children }: { children: React.ReactNode }) {
 }
 
 interface ProfileSectionProps {
-  pointCount: number
-  rewardPoints: number
+  pointCount: number;
+  rewardPoints: number;
 }
 function ProfileSection(props: ProfileSectionProps) {
   return (
-    <div className={tw`flex flex-col  p-6 bg-white	 rounded-lg items-center`}>
-      <img src="https://minimaltoolkit.com/images/randomdata/male/49.jpg" className={tw`rounded-full w-24`}/>
-      <div>[========--------------]</div>
+    <div className={tw`flex flex-col p-6 bg-white rounded-lg items-center`}>
+      <img
+        src="https://minimaltoolkit.com/images/randomdata/male/49.jpg"
+        className={tw`rounded-full w-24`}
+      />
+      <div
+        className={tw`h-4 rounded-full`}
+        style={{
+          background: "#D9D9D9",
+          width: "calc(390px * 0.6)",
+        }}
+      >
+        <div
+          className={tw`h-4 rounded-full`}
+          style={{
+            background: "#2B374D",
+            width: "calc(390px * 0.6 * 0.5)",
+          }}
+        ></div>
+      </div>
       <div className={tw`font-semibold`}>{props.pointCount} Points</div>
-      <div className={tw`text-sm opacity-60`}>You have {props.rewardPoints - props.pointCount} points to [reward]</div>
+      <div className={tw`text-sm opacity-60`}>
+        You have {props.rewardPoints - props.pointCount} points to [reward]
+      </div>
       <div className={tw`w-full	`}>Tier level</div>
     </div>
   );
 }
 
 export const Account = () => {
-  const pointCount = 95
-  const rewardPoints = 100
+  const pointCount = 95;
+  const rewardPoints = 100;
   return (
     <Layout hasSearch={false}>
       {/* TODO: better fix */}
       <div style={{ paddingTop: 56 }}></div>
       <SectionContainer>
-        <ProfileSection pointCount={pointCount} rewardPoints={rewardPoints}/>
+        <ProfileSection pointCount={pointCount} rewardPoints={rewardPoints} />
       </SectionContainer>
     </Layout>
   );
