@@ -55,14 +55,16 @@ export default function AwardEarned(props: Props) {
           paddingLeft: adjuster(20),
           paddingRight: adjuster(20),
           background: containerColor,
+          overflowX: 'hidden',
+          gap: 20
         }}
       >
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            height: 597,
-            width: 597,
+            minHeight: 597,
+            minWidth: 597,
             alignItems: "center",
             justifyContent: "flex-end",
             gap: 10,
@@ -89,8 +91,8 @@ export default function AwardEarned(props: Props) {
           style={{
             background: circleOutline,
             borderRadius: "100%",
-            width: adjuster(295),
-            height: adjuster(295),
+            minWidth: adjuster(295),
+            minHeight: adjuster(295),
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -101,8 +103,8 @@ export default function AwardEarned(props: Props) {
             style={{
               background: circleBackground,
               borderRadius: "100%",
-              width: adjuster(230),
-              height: adjuster(230),
+              minWidth: adjuster(230),
+              minHeight: adjuster(230),
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -148,8 +150,8 @@ export default function AwardEarned(props: Props) {
         <div
           style={{
             borderRadius: "100%",
-            width: adjuster(205),
-            height: adjuster(205),
+            minWidth: adjuster(205),
+            minHeight: adjuster(205),
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -162,8 +164,8 @@ export default function AwardEarned(props: Props) {
         <div
           style={{
             borderRadius: "100%",
-            width: adjuster(281),
-            height: adjuster(281),
+            minWidth: adjuster(281),
+            minHeight: adjuster(281),
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -176,8 +178,8 @@ export default function AwardEarned(props: Props) {
         <div
           style={{
             borderRadius: "100%",
-            width: adjuster(185),
-            height: adjuster(185),
+            minWidth: adjuster(185),
+            minHeight: adjuster(185),
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
