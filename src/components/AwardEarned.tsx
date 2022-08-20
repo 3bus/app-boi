@@ -7,7 +7,14 @@ function adjuster(num: number) {
   return (num / 428) * 390;
 }
 
-export default function AwardEarned() {
+interface Props {
+  topLeadCopy: string;
+  circleLeadCopy: string;
+  circleBottomCopy: string;
+  description: string;
+}
+export default function AwardEarned(props: Props) {
+  const { topLeadCopy, circleLeadCopy, circleBottomCopy, description } = props;
   const navigate = useNavigate();
   return (
     <Layout hasSearch={false}>
@@ -41,7 +48,7 @@ export default function AwardEarned() {
           <div
             style={{ fontSize: adjuster(24), paddingTop: 40, color: "white" }}
           >
-            Great Job!
+            {topLeadCopy}
           </div>
           <div style={{ paddingBottom: 40 }}>
             <FaCheck
@@ -83,9 +90,9 @@ export default function AwardEarned() {
                   fontWeight: "500",
                 }}
               >
-                20
+                {circleLeadCopy}
               </span>
-              <span
+              {/* <span
                 style={{
                   fontSize: adjuster(40),
                   lineHeight: adjuster(64) + "px",
@@ -93,9 +100,9 @@ export default function AwardEarned() {
                 }}
               >
                 %
-              </span>
+              </span> */}
             </div>
-            <div style={{ fontSize: adjuster(24) }}>Discount</div>
+            <div style={{ fontSize: adjuster(24) }}>{circleBottomCopy}</div>
           </div>
         </div>
         <div
@@ -106,7 +113,7 @@ export default function AwardEarned() {
             textAlign: "center",
           }}
         >
-          You earned a 20% discount&nbsp;towards any AT&nbsp;HOP monthly pass
+          {description}
         </div>
 
         <div
