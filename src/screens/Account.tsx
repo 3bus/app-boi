@@ -6,10 +6,11 @@ function SectionContainer({ children }: { children: React.ReactNode }) {
 function ProfileSection() {
   return (
     <div className={tw`flex flex-col  p-6 bg-white	 rounded-lg items-center`}>
-      <img src="https://minimaltoolkit.com/images/randomdata/male/49.jpg" className={tw`rounded-full w-36	`}/>
-      XX Points
-      <div>You have XX points to [reward]</div>
-      <div>Tier level</div>
+      <img src="https://minimaltoolkit.com/images/randomdata/male/49.jpg" className={tw`rounded-full w-24`}/>
+      <div>[========--------------]</div>
+      <div className={tw`font-semibold`}>XX Points</div>
+      <div className={tw`text-sm opacity-60`}>You have XX points to [reward]</div>
+      <div className={tw`w-full	`}>Tier level</div>
     </div>
   );
 }
