@@ -128,6 +128,14 @@ function ProfileSection(props: ProfileSectionProps) {
         className="mt-2"
         renderRightContent={() => <HiChevronRight size={24} />}
       />
+      <BubbleCard
+        text="Earn points"
+        onClick={() => {
+          navigate("/earn");
+        }}
+        className="mt-2"
+        renderRightContent={() => <HiChevronRight size={24} />}
+      />
     </div>
   );
 }

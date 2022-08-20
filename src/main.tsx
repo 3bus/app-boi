@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { setup } from "twind";
 import * as colors from "twind/colors";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { Account, Depatures, Planner, Reserve, Bussin } from "./screens";
+import { Account, Depatures, Planner, Reserve, Bussin, Earn } from "./screens";
 
 setup({
   theme: {
@@ -24,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/rewards" element={<Account />} />
         <Route path="/reserve" element={<Reserve />} />
         <Route path="/bussin" element={<Bussin />} />
+        <Route path="/earn" element={<Earn />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
