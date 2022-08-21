@@ -117,7 +117,7 @@ export function MapView() {
     return segments;
   }, []);
 
-  if (animationStep <= 1899) {
+  if (searchTerm && animationStep <= 1899) {
     onAnimate({
       longitude: travelSegments[animationStep][0],
       latitude: travelSegments[animationStep][1],
