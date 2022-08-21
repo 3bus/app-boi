@@ -1,3 +1,4 @@
+import { useLayoutEffect, useState } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { tw } from "twind";
 import { Layout } from "./components";
@@ -5,7 +6,11 @@ import { Account, Reserve, Bussin, Earn, Map } from "./screens";
 
 export const App = () => {
   const { pathname: location } = useLocation();
-  const memoMap = <Map />;
+  const [memoMap, setMemoMap] = useState<JSX.Element | undefined>(undefined);
+
+  useLayoutEffect(() => {
+    setMemoMap(<Map />);
+  }, []);
 
   return (
     <Layout
