@@ -4,9 +4,12 @@ Bustle allows you to earn points while you ride on your bus journey.
 
 
 ## Tech Stack
-- React
+- [React](https://reactjs.org/)
 - [Twind](https://twind.dev)
-- Mapbox
+- [Mapbox](https://www.mapbox.com/)
 
 ## How to develop
 See [DEVELOPERS.md](DEVELOPERS.md)
+
+## Credits
+Brought to you by [Team 3Bus](https://github.com/3bus)
