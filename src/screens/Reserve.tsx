@@ -77,7 +77,7 @@ export const Reserve = () => {
   };
 
   return (
-    <Layout hasSearch={false}>
+    <>
       <div className={tw` h-full`}>
         <div
           className={tw`bg-white p-4 text-gray-700 justify-center flex flex-row relative`}
@@ -91,6 +91,6 @@ export const Reserve = () => {
           {renderContent(stage)}
         </div>
       </div>
-    </Layout>
+    </>
   );
 };

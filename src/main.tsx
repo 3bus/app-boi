@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { setup } from "twind";
 import * as colors from "twind/colors";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { Account, Depatures, Planner, Reserve, Bussin, Earn } from "./screens";
+import { BrowserRouter } from "react-router-dom";
 import { SearchContextContextProvider } from "./contexts/SearchContext";
+import { App } from "./App";
 
 setup({
   theme: {
@@ -18,16 +18,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <SearchContextContextProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Navigate to="/planner" replace />} />
-          <Route path="/planner" element={<Planner />} />
-          <Route path="/departures" element={<Depatures />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/rewards" element={<Account />} />
-          <Route path="/reserve" element={<Reserve />} />
-          <Route path="/bussin" element={<Bussin />} />
-          <Route path="/earn/:id" element={<Earn />} />
-        </Routes>
+        <App />
       </BrowserRouter>
     </SearchContextContextProvider>
   </React.StrictMode>

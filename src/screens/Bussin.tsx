@@ -113,7 +113,7 @@ function VoteSection() {
 
 export const Bussin = () => {
   return (
-    <Layout hasSearch={false}>
+    <>
       You are traveling on bus 777 on route 42
       <SectionContainer>
         <LightSection />
@@ -124,6 +124,6 @@ export const Bussin = () => {
       <SectionContainer>
         <OrderSection />
       </SectionContainer>
-    </Layout>
+    </>
   );
 };

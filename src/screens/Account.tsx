@@ -14,7 +14,7 @@ export const Account = () => {
   const rewardPoints = 100;
   const nextReward = "Silver level";
   return (
-    <Layout hasSearch={false}>
+    <>
       <SectionContainer>
         <ProfileSection
           pointCount={pointCount}
@@ -54,6 +54,6 @@ export const Account = () => {
             />
           ))}
       </SectionContainer>
-    </Layout>
+    </>
   );
 };
