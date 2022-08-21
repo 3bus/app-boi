@@ -2,7 +2,7 @@ import { useState } from "react";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { tw } from "twind";
 import { css } from "twind/css";
-import { Meme } from './memes';
+import { Meme } from "./memes";
 
 interface ProfileAccountProps {
   pointCount: number;
