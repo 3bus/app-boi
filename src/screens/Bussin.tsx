@@ -1,3 +1,4 @@
+import { FaBus } from "react-icons/fa";
 import { tw } from "twind/css";
 import { Layout, ProfileSection, SectionContainer } from "../components";
 
@@ -111,19 +112,29 @@ function VoteSection() {
   );
 }
 
+export const Section = ({ children, header }: any) => {
+  return (
+    <div>
+      <div className={tw`font-bold text-xl text-blueGray-700`}>{header}</div>
+      <div>{children}</div>
+    </div>
+  );
+};
+
 export const Bussin = () => {
   return (
     <>
-      You are traveling on bus 777 on route 42
-      <SectionContainer>
+      <div className={tw`px-4 py-6 flex flex-col gap-y-4`}>
+        <div
+          className={tw`flex flex-row gap-x-2 p-6 bg-white rounded-lg border-b-4 border-blueGray-700 text-blueGray-700 items-center`}
+        >
+          <FaBus />
+          Traveling on bus 777 along route 42
+        </div>
         <LightSection />
-      </SectionContainer>
-      <SectionContainer>
         <VoteSection />
-      </SectionContainer>
-      <SectionContainer>
         <OrderSection />
-      </SectionContainer>
+      </div>
     </>
   );
 };

@@ -44,7 +44,7 @@ export default function AwardEarned(props: Props) {
   } = props;
   const navigate = useNavigate();
   return (
-    <Layout hasSearch={false}>
+    <>
       <div
         style={{
           display: "flex",
@@ -55,8 +55,8 @@ export default function AwardEarned(props: Props) {
           paddingLeft: adjuster(20),
           paddingRight: adjuster(20),
           background: containerColor,
-          overflowX: 'hidden',
-          gap: 20
+          overflowX: "hidden",
+          gap: 20,
         }}
       >
         <div
@@ -194,12 +194,12 @@ export default function AwardEarned(props: Props) {
           className={tw`px-4 py-3 text-sm text-white rounded-lg shadow-sm w-full`}
           style={{ backgroundColor: "#2B374D" }}
           onClick={() => {
-            navigate(-1);
+            navigate("/planner");
           }}
         >
           Back
         </button>
       </div>
-    </Layout>
+    </>
   );
 }
