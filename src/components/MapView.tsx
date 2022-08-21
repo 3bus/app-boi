@@ -87,7 +87,8 @@ export function MapView() {
     travelSegments[
       animationStep >= travelSegments.length ? animationStep : animationStep + 1
     ];
-  const rotationBearing = bearing(point(start), point(end));
+  const rotationBearing =
+    !start || !end ? 0 : bearing(point(start), point(end));
   const MARKER_SIZE = 32;
   const dataOne: GeoJSON.Feature<GeoJSON.Geometry> = {
     type: "Feature",
