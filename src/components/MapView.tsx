@@ -53,7 +53,6 @@ export function MapView() {
 
   const { searchTerm, setSearchTerm } = useSearchTerm();
   const [animationStep, setAnimationStep] = useState(0);
-  console.log({ animationStep });
   if (animationStep >= animationSteps) {
     navigate("/earn/1");
   }

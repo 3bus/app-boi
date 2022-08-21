@@ -41,7 +41,7 @@ export const Layout = ({ children, hasSearch = true }: Props) => {
             max-width: 390px;
             max-height: 844px;
           `,
-          "w-full h-full bg-gray-200 relative rounded-2xl shadow-xl overflow-hidden",
+          "w-full h-full bg-gray-200 relative sm:rounded-2xl shadow-xl overflow-hidden",
         ])}
       >
         <Header
