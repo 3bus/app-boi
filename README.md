@@ -1,26 +1,14 @@
-# Bustlety
+# Bustle app
+[Bustle](https://bustle.netlify.app) allows you to earn points while you ride on your bus journey.
 
-## Twind
+## Tech Stack
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Twind](https://twind.dev)
+- [Mapbox](https://www.mapbox.com/)
 
-Twind is just Tailwind but with CSS in JS
+## How to develop
+See [DEVELOPERS.md](DEVELOPERS.md)
 
-To use like tailwind
-`import {tw} from 'twind'`
-
-and then pass into the className prop into a component
-
-```
-    <div className={tw`bg-gray-500 border border-blue-500`}>
-```
-
-you can also use it like classnames to do more dynamic styling
-
-```
-    <div className={tw(`bg-gray-500 border border-blue-500`, {"bg-blue-500": isActive})}>
-```
-
-If you want to override styles, set the base styles using the `apply` template literal (import it from twind package)
-
-```
-    <div className={tw(apply`bg-gray-500 border border-blue-500`, newClassNames)}>
-```
+## Credits
+Brought to you by [Team 3Bus](https://github.com/3bus)

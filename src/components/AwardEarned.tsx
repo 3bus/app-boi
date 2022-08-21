@@ -8,13 +8,13 @@ function adjuster(num: number) {
 }
 
 function getCircleColor(background: string) {
-  var c = background.substring(1); // strip #
-  var rgb = parseInt(c, 16); // convert rrggbb to decimal
-  var r = (rgb >> 16) & 0xff; // extract red
-  var g = (rgb >> 8) & 0xff; // extract green
-  var b = (rgb >> 0) & 0xff; // extract blue
+  const c = background.substring(1); // strip #
+  const rgb = parseInt(c, 16); // convert rrggbb to decimal
+  const r = (rgb >> 16) & 0xff; // extract red
+  const g = (rgb >> 8) & 0xff; // extract green
+  const b = (rgb >> 0) & 0xff; // extract blue
 
-  var luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
+  const luma = 0.2126 * r + 0.7152 * g + 0.0722 * b; // per ITU-R BT.709
 
   if (luma < 40) {
     // pick a different colour
@@ -22,6 +22,7 @@ function getCircleColor(background: string) {
   }
   return "black";
 }
+
 interface Props {
   topLeadCopy: string;
   circleLeadCopy: string;
@@ -54,14 +55,16 @@ export default function AwardEarned(props: Props) {
           paddingLeft: adjuster(20),
           paddingRight: adjuster(20),
           background: containerColor,
+          overflowX: 'hidden',
+          gap: 20
         }}
       >
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            height: 597,
-            width: 597,
+            minHeight: 597,
+            minWidth: 597,
             alignItems: "center",
             justifyContent: "flex-end",
             gap: 10,
@@ -86,11 +89,10 @@ export default function AwardEarned(props: Props) {
         </div>
         <div
           style={{
-            // background: "rgb(254, 255, 215)",
             background: circleOutline,
             borderRadius: "100%",
-            width: adjuster(295),
-            height: adjuster(295),
+            minWidth: adjuster(295),
+            minHeight: adjuster(295),
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -99,11 +101,10 @@ export default function AwardEarned(props: Props) {
         >
           <div
             style={{
-              // background: "#F9FFB3",
               background: circleBackground,
               borderRadius: "100%",
-              width: adjuster(230),
-              height: adjuster(230),
+              minWidth: adjuster(230),
+              minHeight: adjuster(230),
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -114,7 +115,8 @@ export default function AwardEarned(props: Props) {
             <div style={{ textAlign: "center" }}>
               <span
                 style={{
-                  fontSize: circleLeadCopy.length > 3 ? adjuster(40) : adjuster(64),
+                  fontSize:
+                    circleLeadCopy.length > 3 ? adjuster(40) : adjuster(64),
                   lineHeight: adjuster(64) + "px",
                   fontWeight: "500",
                 }}
@@ -148,8 +150,8 @@ export default function AwardEarned(props: Props) {
         <div
           style={{
             borderRadius: "100%",
-            width: adjuster(205),
-            height: adjuster(205),
+            minWidth: adjuster(205),
+            minHeight: adjuster(205),
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -162,8 +164,8 @@ export default function AwardEarned(props: Props) {
         <div
           style={{
             borderRadius: "100%",
-            width: adjuster(281),
-            height: adjuster(281),
+            minWidth: adjuster(281),
+            minHeight: adjuster(281),
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -176,8 +178,8 @@ export default function AwardEarned(props: Props) {
         <div
           style={{
             borderRadius: "100%",
-            width: adjuster(185),
-            height: adjuster(185),
+            minWidth: adjuster(185),
+            minHeight: adjuster(185),
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

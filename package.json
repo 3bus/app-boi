@@ -1,5 +1,5 @@
 {
-  "name": "bustlety",
+  "name": "bustle",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@mapbox/search-js-react": "^1.0.0-beta.13",
+    "@turf/turf": "^6.5.0",
     "mapbox-gl": "^2.9.2",
     "react": "^18.2.0",
     "react-datetime-picker": "^3.5.0",

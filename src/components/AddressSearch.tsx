@@ -1,10 +1,10 @@
 import { apply, tw } from "twind";
 import { AddressAutofill } from "@mapbox/search-js-react";
-import { AutofillRetrieveResponse } from '@mapbox/search-js-core';
+import { AutofillRetrieveResponse } from "@mapbox/search-js-core";
 
 type Props = {
   className?: string;
-  onSelect: (results: AutofillRetrieveResponse) => void
+  onSelect: (results: AutofillRetrieveResponse) => void;
 };
 
 export function AddressSearch({ className, onSelect }: Props) {
@@ -16,8 +16,12 @@ export function AddressSearch({ className, onSelect }: Props) {
       >
         <input
           autoComplete="shipping address-line1"
-          className={tw(apply`rounded-md p-2 bg-white text-gray-600 w-full`, className)}
-      />
+          placeholder="Search an address"
+          className={tw(
+            apply`rounded-md p-2 bg-white text-gray-600 w-full`,
+            className
+          )}
+        />
       </AddressAutofill>
     </form>
   );

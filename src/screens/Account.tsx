@@ -8,12 +8,6 @@ import {
   SectionContainer,
 } from "../components";
 
-interface ProfileAccountProps {
-  pointCount: number;
-  rewardPoints: number;
-  nextReward: string;
-}
-
 export const Account = () => {
   const navigate = useNavigate();
   const pointCount = 55;
@@ -50,6 +44,7 @@ export const Account = () => {
           .fill(undefined)
           .map((_, index) => (
             <BubbleCard
+              key={index}
               text={`Earn points ${index + 1}`}
               onClick={() => {
                 navigate(`/earn/${index + 1}`);

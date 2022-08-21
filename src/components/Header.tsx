@@ -3,6 +3,7 @@ import { HiMenu } from "react-icons/hi";
 import { FaBell } from "react-icons/fa";
 import { AddressSearch } from "./AddressSearch";
 import { forwardRef } from "react";
+import { VscClose } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
 import { animation, css } from "twind/css";
 import {
@@ -11,6 +12,7 @@ import {
   LiveDepartureIcon,
 } from "./NavigationBar";
 import { useDelayUnmount } from "../hooks";
+import { useSearchTerm } from "../contexts/SearchContext";
 
 type Props = {
   pageName?: string;
@@ -151,6 +153,7 @@ const navLinkStyles = ({ isActive }: { isActive: boolean }) =>
 export const Header = forwardRef(
   ({ pageName, hasSearch = true, openNav, setOpenNav }: Props, ref: any) => {
     const shouldRenderMenu = useDelayUnmount(openNav, 500);
+    const { searchTerm, setSearchTerm } = useSearchTerm();
 
     const renderMenu = () => {
       return (
@@ -210,7 +213,13 @@ export const Header = forwardRef(
           </p>
           <FaBell size={18} />
         </div>
-        {hasSearch && <AddressSearch onSelect={console.log} />}
+        {hasSearch && (
+          <AddressSearch
+            onSelect={(results) => {
+              setSearchTerm(results.features[0].properties.address_line1 || "");
+            }}
+          />
+        )}
       </div>
     );
   }
