@@ -1,6 +1,6 @@
-# Guide for developers
+# How to develop
 
-## How to develop
+## Setup
 ```
 $ yarn
 $ yarn dev
