@@ -49,8 +49,33 @@ const path = [
 let animationId: number | undefined = undefined;
 let animationSpeed = 3;
 let animationSteps = 1900;
+
+const useAudio = (url: string): [boolean, () => void] => {
+  const [audio] = useState(new Audio(url));
+  const [playing, setPlaying] = useState(false);
+
+  const toggle = () => setPlaying(!playing);
+  const playyy = () => setPlaying(true);
+
+  useEffect(() => {
+      playing ? audio.play() : audio.pause();
+    },
+    [playing]
+  );
+
+  useEffect(() => {
+    audio.addEventListener('ended', () => setPlaying(false));
+    return () => {
+      audio.removeEventListener('ended', () => setPlaying(false));
+    };
+  }, []);
+
+  return [playing, playyy];
+};
+
 export function MapView() {
   const navigate = useNavigate();
+  const [_playing, play] = useAudio('/ka-ching.mp3');
 
   const mapRef = useRef<MapRef>(null);
 
@@ -68,6 +93,7 @@ export function MapView() {
     setSearchTerm("");
     if (animationId !== undefined) window.cancelAnimationFrame(animationId);
     navigate("/earn/1");
+    play()
   }
   const animate = () => {
     animationStep < animationSteps &&
