@@ -4,8 +4,7 @@ import { Layout, ProfileSection, SectionContainer } from "../components";
 
 function LightSection() {
   return (
-    <div className={tw`flex flex-col  p-6 bg-white	 rounded-lg`}>
-      <b>Set the mood lighting</b>
+    <>
       <label htmlFor="favcolor">Select your favorite color:</label>
       <input type="color" id="favcolor" name="favcolor" value="#ff0000" />1
       bussin'
@@ -14,14 +13,13 @@ function LightSection() {
       >
         Change!
       </button>
-    </div>
+    </>
   );
 }
 
 function OrderSection() {
   return (
-    <div className={tw`flex flex-col  p-6 bg-white	 rounded-lg`}>
-      <b>Order Refreshment</b>
+    <>
       <label htmlFor="dog-names">
         Choose a refreshment for when you leave the bus:
       </label>
@@ -46,14 +44,13 @@ function OrderSection() {
       >
         Order!
       </button>
-    </div>
+    </>
   );
 }
 
 function VoteSection() {
   return (
-    <div className={tw`flex flex-col  p-6 bg-white	 rounded-lg`}>
-      <b>Set the mood (music)</b>
+    <>
       <p>Select a music genre:</p>
       <div className={tw`flex justify-center`}>
         <div>
@@ -108,15 +105,19 @@ function VoteSection() {
       >
         Vote!
       </button>
-    </div>
+    </>
   );
 }
 
 export const Section = ({ children, header }: any) => {
   return (
-    <div>
-      <div className={tw`font-bold text-xl text-blueGray-700`}>{header}</div>
-      <div>{children}</div>
+    <div className={tw`bg-white rounded-lg`}>
+      <div
+        className={tw`font-bold text-xl text-blueGray-700 p-4 border-b border-blueGray-200`}
+      >
+        {header}
+      </div>
+      <div className={tw`p-4 flex flex-col`}>{children}</div>
     </div>
   );
 };
@@ -131,9 +132,15 @@ export const Bussin = () => {
           <FaBus />
           Traveling on bus 777 along route 42
         </div>
-        <LightSection />
-        <VoteSection />
-        <OrderSection />
+        <Section header="Set the mood lighting">
+          <LightSection />
+        </Section>
+        <Section header="Order Refreshment">
+          <VoteSection />
+        </Section>
+        <Section header="Set the mood (music)">
+          <OrderSection />
+        </Section>
       </div>
     </>
   );

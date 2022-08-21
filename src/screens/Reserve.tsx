@@ -82,7 +82,7 @@ export const Reserve = () => {
         <div
           className={tw`bg-white p-4 text-gray-700 justify-center flex flex-row relative`}
         >
-          <Link to="/rewards" className={tw`absolute left-3 top-3`}>
+          <Link to="/account" className={tw`absolute left-3 top-3`}>
             <HiChevronLeft size={32} />
           </Link>
           <p className={tw` font-semibold`}>Request a spot</p>
