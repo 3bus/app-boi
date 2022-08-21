@@ -8,3 +8,5 @@ Bustle allows you to earn points while you ride on your bus journey
 - Twind
 - Mapbox
 
+## How to develop
+See [DEVELOPERS.md](DEVELOPERS.md)
