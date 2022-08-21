@@ -54,6 +54,9 @@ export function MapView() {
   const { searchTerm, setSearchTerm } = useSearchTerm();
   const [animationStep, setAnimationStep] = useState(0);
   if (animationStep >= animationSteps) {
+    setAnimationStep(0);
+    setSearchTerm("")
+    if (animationId !== undefined) window.cancelAnimationFrame(animationId)
     navigate("/earn/1");
   }
   const animate = () => {
