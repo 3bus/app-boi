@@ -1,8 +1,14 @@
+# Guide for developers
+
 ## How to develop
 ```
 $ yarn
 $ yarn dev
 ```
+
+## Git usage
+- Don't force push to master
+- Use feature branches when possible
 
 ## Twind
 
@@ -28,3 +34,4 @@ If you want to override styles, set the base styles using the `apply` template l
 ```
     <div className={tw(apply`bg-gray-500 border border-blue-500`, newClassNames)}>
 ```
+
