@@ -19,7 +19,7 @@ export const NavigationBar = forwardRef((_, ref: any) => {
         Live Depatures
       </NavigationIcon>
       <NavigationIcon Icon={<ATHopIcon />} to="/account">
-        My AT HOP
+        My BT HOP
       </NavigationIcon>
     </div>
   );
