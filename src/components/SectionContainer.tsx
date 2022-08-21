@@ -5,5 +5,5 @@ export const SectionContainer = ({
 }: {
   children: React.ReactNode;
 }) => {
-  return <div className={tw`p-6`}>{children}</div>;
+  return <div className={tw`p-4`}>{children}</div>;
 };

@@ -23,7 +23,7 @@ export const Account = () => {
         />
       </SectionContainer>
       <SectionContainer>
-        <p className={tw` text-lg pt-6 pb-2`}>Rewards</p>
+        <p className={tw` text-lg pb-2`}>Rewards</p>
         <BubbleCard
           text="Reserve a spot"
           onClick={() => {

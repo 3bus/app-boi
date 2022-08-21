@@ -1,4 +1,6 @@
 import { FaBus } from "react-icons/fa";
+import { HiChevronLeft } from "react-icons/hi";
+import { Link } from "react-router-dom";
 import { tw } from "twind/css";
 import { Layout, ProfileSection, SectionContainer } from "../components";
 
@@ -9,7 +11,7 @@ function LightSection() {
       <input type="color" id="favcolor" name="favcolor" value="#ff0000" />1
       bussin'
       <button
-        className={tw`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`}
+        className={tw`bg-blue-500 hover:bg-blue-700 mt-4  text-white font-bold py-2 px-4 rounded`}
       >
         Change!
       </button>
@@ -40,7 +42,7 @@ function OrderSection() {
       <br></br>
       <br></br>
       <button
-        className={tw`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`}
+        className={tw`bg-blue-500 hover:bg-blue-700 mt-4  text-white font-bold py-2 px-4 rounded`}
       >
         Order!
       </button>
@@ -101,7 +103,7 @@ function VoteSection() {
         </div>
       </div>
       <button
-        className={tw`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`}
+        className={tw`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mt-4 px-4 rounded`}
       >
         Vote!
       </button>
@@ -124,7 +126,15 @@ export const Section = ({ children, header }: any) => {
 
 export const Bussin = () => {
   return (
-    <>
+    <div className={tw` h-full`}>
+      <div
+        className={tw`bg-white p-4 text-gray-700 justify-center flex flex-row relative`}
+      >
+        <Link to="/account" className={tw`absolute left-3 top-3`}>
+          <HiChevronLeft size={32} />
+        </Link>
+        <p className={tw` font-semibold`}>Bussin</p>
+      </div>
       <div className={tw`px-4 py-6 flex flex-col gap-y-4`}>
         <div
           className={tw`flex flex-row gap-x-2 p-6 bg-white rounded-lg border-b-4 border-blueGray-700 text-blueGray-700 items-center`}
@@ -142,6 +152,6 @@ export const Bussin = () => {
           <OrderSection />
         </Section>
       </div>
-    </>
+    </div>
   );
 };
