@@ -190,7 +190,7 @@ export const Header = forwardRef(
               </NavLink>
               <NavLink to="/account" className={navLinkStyles}>
                 <ATHopIcon width={24} height={24} />
-                My AT HOP
+                My BT HOP
               </NavLink>
             </div>
           </div>
@@ -209,7 +209,7 @@ export const Header = forwardRef(
         >
           <HiMenu size={24} onClick={() => setOpenNav(true)} />
           <p className={tw`text-white font-semibold text-sm`}>
-            {pageName || "My AT Hop"}
+            {pageName || "My BT Hop"}
           </p>
           <FaBell size={18} />
         </div>

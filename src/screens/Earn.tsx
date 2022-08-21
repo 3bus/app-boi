@@ -26,7 +26,7 @@ export function Earn() {
         topLeadCopy="Surprise!"
         circleLeadCopy="Keychain"
         circleBottomCopy="Earned"
-        description="You earned an AT HOP Keychain"
+        description="You earned an BT HOP Keychain"
       />
     );
   }
@@ -117,7 +117,7 @@ export function Earn() {
         topLeadCopy="You’re doing something right!"
         circleLeadCopy="Custom Card"
         circleBottomCopy="Earned"
-        description="You earned a custom AT HOP card"
+        description="You earned a custom BT HOP card"
       />
     );
   }
