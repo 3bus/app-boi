@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 import { lineString, along, point, bearing } from "@turf/turf";
@@ -12,6 +12,7 @@ import Map, {
   LayerProps,
   Source,
   Layer,
+  MapRef,
 } from "react-map-gl";
 import { tw } from "twind";
 import { useSearchTerm } from "../contexts/SearchContext";
@@ -51,12 +52,21 @@ let animationSteps = 1900;
 export function MapView() {
   const navigate = useNavigate();
 
+  const mapRef = useRef<MapRef>(null);
+
+  const onAnimate = useCallback(
+    ({ longitude, latitude }: Record<string, number>) => {
+      mapRef.current?.flyTo({ center: [longitude, latitude], duration: 0 });
+    },
+    []
+  );
+
   const { searchTerm, setSearchTerm } = useSearchTerm();
   const [animationStep, setAnimationStep] = useState(0);
   if (animationStep >= animationSteps) {
     setAnimationStep(0);
-    setSearchTerm("")
-    if (animationId !== undefined) window.cancelAnimationFrame(animationId)
+    setSearchTerm("");
+    if (animationId !== undefined) window.cancelAnimationFrame(animationId);
     navigate("/earn/1");
   }
   const animate = () => {
@@ -81,6 +91,13 @@ export function MapView() {
     return segments;
   }, []);
 
+  if (animationStep <= 1899) {
+    onAnimate({
+      longitude: travelSegments[animationStep][0],
+      latitude: travelSegments[animationStep][1],
+    });
+  }
+
   const start =
     travelSegments[
       animationStep >= travelSegments.length ? animationStep - 1 : animationStep
@@ -91,7 +108,6 @@ export function MapView() {
     ];
   const rotationBearing =
     !start || !end ? 0 : bearing(point(start), point(end));
-  const MARKER_SIZE = 32;
   const dataOne: GeoJSON.Feature<GeoJSON.Geometry> = {
     type: "Feature",
     properties: {},
@@ -103,6 +119,7 @@ export function MapView() {
   return (
     <>
       <Map
+        ref={mapRef}
         initialViewState={{
           latitude: -36.848031,
           longitude: 174.762193,
@@ -174,27 +191,45 @@ export function MapView() {
             <div
               className={tw`absolute z-10 bottom-0 left-0 p-2 border border-gray-200 shadow-md border-solid w-full border-full`}
             >
-              <div className={tw`w-full bg-white rounded-md p-2`}>
-                <span className={tw`flex flex-row items-center`}>
-                  <IoMdClose
-                    className={tw`mr-2`}
-                    size="1rem"
-                    onClick={() => setSearchTerm("")}
-                  />
+              <div
+                className={tw`w-full flex flex-col gap-y-4 bg-white rounded-xl p-4`}
+              >
+                <div className={tw`flex flex-row w-full justify-between`}>
                   <h3 className={tw`text-lg font-semibold`}>Your Journey</h3>
-                </span>
-                <p className={tw`mb-2 mt-1`}>
-                  Your journey to {searchTerm} will take 5 minutes. You will
-                  earn 3 bussin points.
-                </p>
+                  <IoMdClose
+                    size={24}
+                    onClick={() => {
+                      setSearchTerm("");
+                      setAnimationStep(0);
+                      if (animationId) window.cancelAnimationFrame(animationId);
+                    }}
+                  />
+                </div>
+                {animationStep === 0 && (
+                  <p className={tw`mb-2 mt-1`}>
+                    Your journey to {searchTerm} will take 5 minutes. You will
+                    earn 3 bussin points.
+                  </p>
+                )}
                 <Button
-                  className="text-xs"
-                  onClick={() => {
-                    setAnimationStep(0);
-                    animationId = window.requestAnimationFrame(animate);
-                  }}
+                  className={`text-xs  ${
+                    animationStep === 0 && "bg-blueGray-700 text-white"
+                  }`}
+                  onClick={
+                    animationStep === 0
+                      ? () => {
+                          setAnimationStep(0);
+                          animationId = window.requestAnimationFrame(animate);
+                        }
+                      : () => {
+                          setSearchTerm("");
+                          setAnimationStep(0);
+                          if (animationId)
+                            window.cancelAnimationFrame(animationId);
+                        }
+                  }
                 >
-                  Begin Journey
+                  {animationStep === 0 ? "Begin Journey" : "Cancel"}
                 </Button>
               </div>
             </div>
