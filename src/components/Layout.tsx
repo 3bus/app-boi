@@ -1,4 +1,4 @@
-import { ReactNode, useMemo, useRef, useState } from "react";
+import { ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { Header, NavigationBar } from "../components";
 import { tw, css } from "twind/css";
 import { useHeight } from "../hooks";
@@ -12,22 +12,37 @@ type Props = {
 
 export const Layout = ({ children, hasSearch = true }: Props) => {
   const [openNav, setOpenNav] = useState(false);
-  const headerRef = useRef(null);
-  const footerRef = useRef(null);
-  const containerRef = useRef(null);
-  const headerHeight = useHeight(headerRef);
-  const footerHeight = useHeight(footerRef);
-  const containerHeight = useHeight(containerRef);
-  const contentHeight = useMemo(() => {
-    if (
-      containerHeight === undefined ||
-      footerHeight === undefined ||
-      headerHeight === undefined
-    )
-      return 0;
+  const headerRef = useRef<HTMLElement | null>(null);
+  const footerRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [contentHeight, setContentHeight] = useState(0);
 
-    return containerHeight - footerHeight - headerHeight;
-  }, [headerHeight, footerHeight, containerHeight]);
+  useEffect(() => {
+    if (!headerRef?.current || !footerRef?.current || !containerRef?.current)
+      return;
+    const obs = new ResizeObserver(() => {
+      const containerHeight =
+        containerRef?.current?.getBoundingClientRect().height;
+      const footerHeight = footerRef?.current?.getBoundingClientRect().height;
+      const headerHeight = headerRef?.current?.getBoundingClientRect().height;
+      if (
+        containerHeight === undefined ||
+        footerHeight === undefined ||
+        headerHeight === undefined
+      ) {
+        setContentHeight(0);
+        return;
+      }
+      const out = containerHeight - footerHeight - headerHeight;
+      setContentHeight(out);
+    });
+
+    obs.observe(headerRef.current);
+    obs.observe(footerRef.current);
+    obs.observe(containerRef.current);
+
+    return () => obs.disconnect();
+  }, [headerRef, footerRef, containerRef]);
 
   return (
     <div
