@@ -1,11 +1,12 @@
 import { useMemo } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { tw } from "twind";
 import { Layout } from "./components";
 import { Account, Reserve, Bussin, Earn, Map } from "./screens";
 
 export const App = () => {
   const { pathname: location } = useLocation();
-  const memoMap = useMemo(() => <Map />, []);
+  const memoMap = useMemo(() => <Map/>, []);
 
   return (
     <Layout
@@ -14,13 +15,13 @@ export const App = () => {
       }
     >
       <Routes>
-        <Route path="/" element={<Navigate to="/planning" replace />} />
-        <Route path="/planner" element={memoMap} />
-        <Route path="/departures" element={memoMap} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/reserve" element={<Reserve />} />
-        <Route path="/bussin" element={<Bussin />} />
-        <Route path="/earn/:id" element={<Earn />} />
+        <Route path="/" element={<Navigate to="/planner" replace />} />
+        <Route path="/planner" element={<span key="abc">{memoMap}</span>} />
+        <Route path="/departures" element={<span key="abc">{memoMap}</span>} />
+        <Route path="/account" element={<><span key="abc" className={tw`hidden`}>{memoMap}</span><Account /></>} />
+        <Route path="/reserve" element={<><span key="abc" className={tw`hidden`}>{memoMap}</span><Reserve /></>} />
+        <Route path="/bussin" element={<><span key="abc" className={tw`hidden`}>{memoMap}</span><Bussin /></>} />
+        <Route path="/earn/:id" element={<><span key="abc" className={tw`hidden`}>{memoMap}</span><Earn /></>} />
       </Routes>
     </Layout>
   );
