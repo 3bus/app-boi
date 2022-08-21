@@ -1,0 +1,22 @@
+{
+  "short_name": "Bustle",
+  "name": "Bustle: Get Bussin",
+  "icons": [
+    {
+      "src": "/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1E293B",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#1E293B",
+  "description": "Bustle allows you to earn points while you ride on your bus journey"
+}
